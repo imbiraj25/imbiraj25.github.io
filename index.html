@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biraj Thapa – Civil Engineer</title>
+  <meta name="description" content="Portfolio of Biraj Thapa – Civil Engineer & Project Coordinator in Canada. Projects, drawings, résumé, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;           /* deep navy */
+      --card:#121a2b;         /* slightly lighter */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e6edf6;         /* near-white */
+      --brand:#60a5fa;        /* blue-400 */
+      --brand-2:#22d3ee;      /* cyan-400 */
+      --accent:#38bdf8;       /* sky-400 */
+      --ring: rgba(96, 165, 250, 0.5);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%),
+               radial-gradient(900px 500px at 90% -20%, rgba(96,165,250,.08), transparent 60%), var(--bg);color:var(--text);font-family:Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.9}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6));backdrop-filter: blur(6px);border-bottom:1px solid rgba(148,163,184,.12);z-index:50}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 24px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+    .logo-badge{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001b2b;font-weight:900;box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:18px;font-weight:600}
+    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--text)}
+    .nav-links a:hover{background:rgba(148,163,184,.12)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:64px 24px}
+    .hero-card{padding:32px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);border:1px solid rgba(148,163,184,.2);border-radius:999px;padding:6px 10px}
+    .title{font-size:clamp(28px, 3.6vw, 44px);line-height:1.1;margin:10px 0 12px;font-weight:800}
+    .subtitle{color:var(--muted);max-width:62ch}
+    .cta{display:flex;gap:12px;margin-top:22px}
+    .btn{appearance:none;border:none;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand-2));color:#001b2b}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(148,163,184,.25)}
+    .btn-ghost:hover{background:rgba(148,163,184,.08)}
+    .hero-img{border-radius:var(--radius);border:1px solid rgba(148,163,184,.12);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-img img{width:100%;height:auto;display:block}
+
+    /* Section */
+    section{padding:48px 24px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
+    .section-title{font-size:clamp(20px, 2vw, 28px);font-weight:800}
+    .section-desc{color:var(--muted)}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    .list{padding-left:18px}
+
+    /* Projects */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(148,163,184,.12);background:var(--card)}
+    .project:hover .project-img{transform:scale(1.04)}
+    .project-img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .3s}
+    .project-body{padding:14px 14px 18px}
+    .tag{display:inline-block;margin-right:8px;margin-bottom:8px;padding:4px 8px;font-size:12px;border:1px solid rgba(148,163,184,.25);border-radius:999px;color:var(--muted)}
+
+    /* Resume */
+    .resume-embed{width:100%;min-height:680px;border:1px solid rgba(148,163,184,.12);border-radius:12px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:#0e1729;color:var(--text)}
+    input:focus, textarea:focus{outline:2px solid var(--ring);border-color:transparent}
+    textarea{min-height:140px;resize:vertical}
+
+    footer{padding:28px 24px;color:var(--muted);border-top:1px solid rgba(148,163,184,.12);text-align:center}
+
+    /* Utilities & responsive */
+    .hide{display:none}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      nav{padding:12px 16px}
+      .grid{grid-template-columns:1fr}
+      .cta{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <!-- ======= NAVBAR ======= -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true">BT</div>
+        <div>
+          <div style="font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.12em">BIRAJ THAPA</div>
+          <div style="font-weight:800">Civil Engineer</div>
+        </div>
+      </div>
+      <div class="nav-links" role="navigation" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Résumé</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ======= HERO ======= -->
+  <main id="home" class="container hero" aria-labelledby="home-title">
+    <div class="hero-card" role="region" aria-label="Intro">
+      <span class="kicker">Civil Engineer · Project Coordinator · Structural Enthusiast</span>
+      <h1 id="home-title" class="title">Designing infrastructure that is safe, efficient, and future‑ready.</h1>
+      <p class="subtitle">I’m Biraj Thapa, a Civil Engineer based in Canada with experience in construction supervision, quantity take‑offs, and CAD modelling. Post‑grad in Engineering Business & Safety Management (Confederation College, 2025). Aspiring Structural Engineer working toward P.Eng.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="assets/resume.pdf" download>Download Résumé</a>
+      </div>
+    </div>
+    <div class="hero-img" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1400&auto=format&fit=crop" alt="Bridge structure at dusk" />
+    </div>
+  </main>
+
+  <!-- ======= ABOUT ======= -->
+  <section id="about" class="container">
+    <div class="section-head">
+      <h2 class="section-title">About</h2>
+      <p class="section-desc">Background · Skills · Focus</p>
+    </div>
+    <div class="about">
+      <article class="card">
+        <h3 style="margin-top:0">Profile</h3>
+        <p>Born in Nepal (2001). B.Eng. Civil Engineering – Kathmandu University (2023). Post‑Graduate Certificate – Engineering Business & Safety Management, Confederation College (2024–2025). Hands‑on site and design experience in Nepal, plus production and leadership exposure in Canada.</p>
+        <ul class="list">
+          <li>Nilgiri Khola Hydropower (110 MW): rebar monitoring, BBS, AutoCAD field mods.</li>
+          <li>Nawadurga Construction: site supervision, CAD drawings, quantity take‑offs.</li>
+          <li>Assistant Production Manager (Canada): scheduling, QA, cost & workflow.</li>
+        </ul>
+      </article>
+      <aside class="card">
+        <h3 style="margin-top:0">Core Skills</h3>
+        <ul class="list">
+          <li>AutoCAD · Civil 3D · ETABS · MS Project · Microsoft Office</li>
+          <li>Technical drawings, estimates, progress reporting</li>
+          <li>Team coordination, client communication, conflict resolution</li>
+          <li>WHMIS‑aware; quality control & safe worksite management</li>
+        </ul>
+        <h4>Career Goal</h4>
+        <p>Structural Engineer path under a P.Eng mentor; entry‑level civil / project coordination roles in Canada.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ======= PROJECTS ======= -->
+  <section id="projects" class="container">
+    <div class="section-head">
+      <h2 class="section-title">Projects & Drawings</h2>
+      <p class="section-desc">Selected works · click a card for details</p>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <strong>Filters:</strong>
+        <button class="btn btn-ghost" data-filter="all">All</button>
+        <button class="btn btn-ghost" data-filter="cad">CAD</button>
+        <button class="btn btn-ghost" data-filter="civil3d">Civil 3D</button>
+        <button class="btn btn-ghost" data-filter="structural">Structural</button>
+        <button class="btn btn-ghost" data-filter="report">Reports</button>
+      </div>
+    </div>
+
+    <div id="project-grid" class="grid" aria-live="polite"></div>
+  </section>
+
+  <!-- ======= RESUME ======= -->
+  <section id="resume" class="container">
+    <div class="section-head">
+      <h2 class="section-title">Résumé</h2>
+      <p class="section-desc">PDF preview · downloadable</p>
+    </div>
+    <div class="card">
+      <iframe class="resume-embed" src="assets/resume.pdf" title="Biraj Thapa – Resume PDF"></iframe>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn btn-primary" href="assets/resume.pdf" download>Download PDF</a>
+        <a class="btn btn-ghost" href="#contact">Request an updated version</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section id="contact" class="container">
+    <div class="section-head">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-desc">Let’s discuss opportunities or collaborations</p>
+    </div>
+    <div class="contact-grid">
+      <div class="card">
+        <h3 style="margin-top:0">Email</h3>
+        <p><a href="mailto:thapa.biraj25@gmail.com">thapa.biraj25@gmail.com</a></p>
+        <h3>LinkedIn</h3>
+        <p><a href="#" id="linkedin-link">Add your LinkedIn URL</a></p>
+        <h3>Location</h3>
+        <p>Thunder Bay, Ontario, Canada</p>
+      </div>
+      <form class="card" onsubmit="sendForm(event)">
+        <h3 style="margin-top:0">Quick Message</h3>
+        <div class="row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Hello Biraj, I’d like to discuss…" required></textarea>
+        </div>
+        <button class="btn btn-primary" style="margin-top:12px" type="submit">Send</button>
+        <p id="form-status" class="hide" role="status" aria-live="polite" style="margin-top:10px"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Biraj Thapa · Built with ♥ by ARIS
+  </footer>
+
+  <!-- ======= LIGHTBOX & DATA ======= -->
+  <dialog id="lightbox" style="border:none;border-radius:16px;max-width:min(980px, 96vw);width:96vw;background:var(--card);color:var(--text);box-shadow:var(--shadow)">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.12)">
+      <strong id="lb-title"></strong>
+      <button class="btn btn-ghost" onclick="closeLightbox()">Close</button>
+    </div>
+    <div id="lb-body" style="padding:12px 12px 18px"></div>
+  </dialog>
+
+  <script>
+    // ---------------------- Replace with your real data ----------------------
+    const PROJECTS = [
+      {
+        title: "Nilgiri Khola Hydropower – Rebar & BBS",
+        year: "2022/23",
+        tags: ["cad", "structural"],
+        cover: "https://images.unsplash.com/photo-1551746908-7d536c7c63c9?q=80&w=1600&auto=format&fit=crop",
+        summary: "Monitored rebar works in powerhouse & switchyard; prepared Bar Bending Schedules and field modifications in AutoCAD.",
+        detailsHTML: `
+          <p><strong>Scope:</strong> Powerhouse & switchyard civil works</p>
+          <ul>
+            <li>Rebar monitoring, concreting checks, spec compliance</li>
+            <li>Prepared <em>Bar Bending Schedules (BBS)</em></li>
+            <li>Field modifications using AutoCAD</li>
+          </ul>
+          <p><a href="#" aria-disabled="true">(Optional) Link to PDF drawing</a></p>
+        `
+      },
+      {
+        title: "Nawadurga – Site Supervision & CAD",
+        year: "2023",
+        tags: ["cad", "civil3d"],
+        cover: "https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=1600&auto=format&fit=crop",
+        summary: "Supervised on-site activities; produced technical drawings, cost estimates and take‑offs using AutoCAD / Civil 3D.",
+        detailsHTML: `
+          <p><strong>Scope:</strong> Residential & infrastructure works</p>
+          <ul>
+            <li>Site supervision, schedule & quality tracking</li>
+            <li>AutoCAD drawings; Civil 3D model communication</li>
+            <li>Quantity take‑offs and cost estimates</li>
+          </ul>
+        `
+      },
+      {
+        title: "Bridge Modelling Study (ETABS/Civil 3D)",
+        year: "2024/25",
+        tags: ["structural"],
+        cover: "https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1600&auto=format&fit=crop",
+        summary: "Exploratory modelling of a cable‑stayed concept; load paths, deck stiffness and pylon proportioning insights.",
+        detailsHTML: `
+          <p>This item can hold screenshots of ETABS models, deck section sketches, and notes on iteration.</p>
+        `
+      },
+    ];
+
+    // ---------------------- Render helpers ----------------------
+    const grid = document.getElementById('project-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lbTitle = document.getElementById('lb-title');
+    const lbBody = document.getElementById('lb-body');
+
+    function render(list){
+      grid.innerHTML = list.map(card).join('');
+    }
+
+    function card(p){
+      return `
+        <article class="project" tabindex="0" role="button" aria-label="${p.title}" onclick='openLightbox(${JSON.stringify(p).replace(/"/g, "&quot;")})' onkeypress='if(event.key==="Enter"){openLightbox(${JSON.stringify(p).replace(/"/g, "&quot;")})}'>
+          <img class="project-img" src="${p.cover}" alt="${p.title}"/>
+          <div class="project-body">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+              <h3 style="margin:0;font-size:18px">${p.title}</h3>
+              <span style="color:var(--muted);font-size:12px">${p.year}</span>
+            </div>
+            <p style="margin:8px 0 10px;color:var(--muted)">${p.summary}</p>
+            ${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}
+          </div>
+        </article>`
+    }
+
+    function openLightbox(p){
+      lbTitle.textContent = p.title;
+      lbBody.innerHTML = `
+        <img src="${p.cover}" alt="${p.title}" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,.12);margin-bottom:10px"/>
+        ${p.detailsHTML}
+      `;
+      if(typeof lightbox.showModal === 'function') lightbox.showModal();
+    }
+    function closeLightbox(){ lightbox.close(); }
+
+    // Filters
+    document.querySelectorAll('[data-filter]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const k = btn.dataset.filter;
+        if(k==='all') return render(PROJECTS);
+        render(PROJECTS.filter(p=>p.tags.includes(k)));
+      })
+    })
+
+    // Simple contact handler (no backend) — opens mail client
+    function sendForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const body = encodeURIComponent(`Hi Biraj,\n\n${msg}\n\n— ${name} (${email})`);
+      window.location.href = `mailto:thapa.biraj25@gmail.com?subject=Portfolio%20Inquiry&body=${body}`;
+      const s = document.getElementById('form-status');
+      s.textContent = 'Opening your email app…';
+      s.classList.remove('hide');
+    }
+
+    // Misc
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Boot
+    render(PROJECTS);
+  </script>
+</body>
+</html>
