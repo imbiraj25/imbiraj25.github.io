@@ -8,65 +8,308 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#121a2b;
-      --muted:#94a3b8;
-      --text:#e6edf6;
-      --brand:#60a5fa;
-      --brand-2:#22d3ee;
-      --accent:#38bdf8;
+      --bg:#0b1220;           /* deep navy */
+      --card:#121a2b;         /* slightly lighter */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e6edf6;         /* near-white */
+      --brand:#60a5fa;        /* blue-400 */
+      --brand-2:#22d3ee;      /* cyan-400 */
+      --accent:#38bdf8;       /* sky-400 */
       --ring: rgba(96, 165, 250, 0.5);
       --radius: 16px;
       --shadow: 0 10px 30px rgba(0,0,0,.4);
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%),radial-gradient(900px 500px at 90% -20%, rgba(96,165,250,.08), transparent 60%), var(--bg);color:var(--text);font-family:Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;}
+    html,body{
+      margin:0;
+      height:100%;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%),
+        radial-gradient(900px 500px at 90% -20%, rgba(96,165,250,.08), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+    }
     a{color:var(--brand);text-decoration:none}
     a:hover{opacity:.9}
-    .container{max-width:1100px;margin-inline:auto;padding:24px}
-    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6));backdrop-filter: blur(6px);border-bottom:1px solid rgba(148,163,184,.12);z-index:50}
-    nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 24px}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
-    .logo-badge{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001b2b;font-weight:900;box-shadow:var(--shadow)}
-    .nav-links{display:flex;gap:18px;font-weight:600}
-    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--text)}
-    .nav-links a:hover{background:rgba(148,163,184,.12)}
 
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:64px 24px}
-    .hero-card{padding:32px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);border:1px solid rgba(148,163,184,.2);border-radius:999px;padding:6px 10px}
-    .title{font-size:clamp(28px, 3.6vw, 44px);line-height:1.1;margin:10px 0 12px;font-weight:800}
-    .subtitle{color:var(--muted);max-width:62ch}
-    .cta{display:flex;gap:12px;margin-top:22px}
-    .btn{appearance:none;border:none;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px}
-    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand-2));color:#001b2b}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+
+    /* NAVBAR */
+    header{
+      position:sticky;
+      top:0;
+      background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6));
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(148,163,184,.12);
+      z-index:50
+    }
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 24px
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.4px
+    }
+    .logo-badge{
+      display:grid;
+      place-items:center;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#001b2b;
+      font-weight:900;
+      box-shadow:var(--shadow)
+    }
+    .nav-links{
+      display:flex;
+      gap:18px;
+      font-weight:600
+    }
+    .nav-links a{
+      padding:8px 12px;
+      border-radius:10px;
+      color:var(--text)
+    }
+    .nav-links a:hover{
+      background:rgba(148,163,184,.12)
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:center;
+      padding:64px 24px
+    }
+    .hero-card{
+      padding:32px;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(148,163,184,.12);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow)
+    }
+    .kicker{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(148,163,184,.2);
+      border-radius:999px;
+      padding:6px 10px
+    }
+    .title{
+      font-size:clamp(28px, 3.6vw, 44px);
+      line-height:1.1;
+      margin:10px 0 12px;
+      font-weight:800
+    }
+    .subtitle{
+      color:var(--muted);
+      max-width:62ch
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      margin-top:22px;
+      flex-wrap:wrap
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      font-size:14px;
+      line-height:1.2
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      color:#001b2b
+    }
     .btn-primary:hover{transform:translateY(-1px)}
-    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(148,163,184,.25)}
+    .btn-ghost{
+      background:transparent;
+      color:var(--text);
+      border:1px solid rgba(148,163,184,.25)
+    }
     .btn-ghost:hover{background:rgba(148,163,184,.08)}
 
+    .hero-img{
+      border-radius:var(--radius);
+      border:1px solid rgba(148,163,184,.12);
+      overflow:hidden;
+      box-shadow:var(--shadow)
+    }
+    .hero-img img{
+      width:100%;
+      height:auto;
+      display:block
+    }
+
+    /* SECTION WRAPPER */
     section{padding:48px 24px}
-    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
-    .section-title{font-size:clamp(20px, 2vw, 28px);font-weight:800}
-    .section-desc{color:var(--muted)}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+      row-gap:8px
+    }
+    .section-title{
+      font-size:clamp(20px, 2vw, 28px);
+      font-weight:800
+    }
+    .section-desc{color:var(--muted);font-size:14px}
 
-    footer{padding:28px 24px;color:var(--muted);border-top:1px solid rgba(148,163,184,.12);text-align:center}
+    /* ABOUT LAYOUT */
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(148,163,184,.12);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+      position:relative;
+      overflow:hidden
+    }
+    .list{padding-left:18px}
 
-    @media (max-width:980px){.hero{grid-template-columns:1fr}}
+    /* PROJECTS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px
+    }
+    .project{
+      position:relative;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.12);
+      background:var(--card);
+      cursor:pointer
+    }
+    .project:hover .project-img{transform:scale(1.04)}
+    .project-img{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      transition:transform .3s
+    }
+    .project-body{padding:14px 14px 18px}
+    .tag{
+      display:inline-block;
+      margin-right:8px;
+      margin-bottom:8px;
+      padding:4px 8px;
+      font-size:12px;
+      border:1px solid rgba(148,163,184,.25);
+      border-radius:999px;
+      color:var(--muted)
+    }
+
+    /* RESUME EMBED */
+    .resume-embed{
+      width:100%;
+      min-height:680px;
+      border:1px solid rgba(148,163,184,.12);
+      border-radius:12px
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px
+    }
+    form .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px
+    }
+    input, textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.25);
+      background:#0e1729;
+      color:var(--text);
+      font-family:inherit;
+      font-size:14px;
+      line-height:1.3
+    }
+    input:focus, textarea:focus{
+      outline:2px solid var(--ring);
+      border-color:transparent
+    }
+    textarea{min-height:140px;resize:vertical}
+    label{display:block;font-size:13px;font-weight:500;margin-bottom:4px;color:var(--text)}
+
+    /* FOOTER */
+    footer{
+      padding:28px 24px;
+      color:var(--muted);
+      border-top:1px solid rgba(148,163,184,.12);
+      text-align:center;
+      font-size:13px
+    }
+
+    /* MISC */
+    .hide{display:none}
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      nav{padding:12px 16px}
+      .grid{grid-template-columns:1fr}
+      .cta{flex-wrap:wrap}
+      form .row{grid-template-columns:1fr}
+    }
   </style>
 </head>
+
 <body>
+  <!-- ======= NAVBAR ======= -->
   <header>
     <nav class="container">
       <div class="logo">
-        <div class="logo-badge">BT</div>
+        <div class="logo-badge" aria-hidden="true">BT</div>
         <div>
           <div style="font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.12em">BIRAJ THAPA</div>
           <div style="font-weight:800">Civil Engineer</div>
         </div>
       </div>
-      <div class="nav-links">
+      <div class="nav-links" role="navigation" aria-label="Primary">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -76,39 +319,351 @@
     </nav>
   </header>
 
-  <main id="home" class="container hero">
-    <div class="hero-card">
+  <!-- ======= HERO ======= -->
+  <main id="home" class="container hero" aria-labelledby="home-title">
+    <div class="hero-card" role="region" aria-label="Intro">
       <span class="kicker">Civil Engineer · Project Coordinator · Structural Enthusiast</span>
-      <h1 class="title">Designing infrastructure that is safe, efficient, and future‑ready.</h1>
-      <p class="subtitle">I’m Biraj Thapa, a Civil Engineer based in Canada with experience in construction supervision, quantity take‑offs, and CAD modelling. Post‑grad in Engineering Business & Safety Management (Confederation College, 2025). Aspiring Structural Engineer working toward P.Eng.</p>
+      <h1 id="home-title" class="title">Designing infrastructure that is safe, efficient, and future-ready.</h1>
+      <p class="subtitle">
+        I’m Biraj Thapa, a Civil Engineer based in Canada with experience in construction supervision,
+        quantity take-offs, and CAD modelling. Post-grad in Engineering Business & Safety Management
+        (Confederation College, 2025). Aspiring Structural Engineer working toward P.Eng.
+      </p>
       <div class="cta">
         <a class="btn btn-primary" href="#projects">View Projects</a>
         <a class="btn btn-ghost" href="assets/resume.pdf" download>Download Resume</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/imbiraj25" target="_blank">Connect on LinkedIn</a>
       </div>
+    </div>
+    <div class="hero-img" aria-hidden="true">
+      <!-- you can replace this image with one in your assets folder later -->
+      <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1400&auto=format&fit=crop"
+           alt="Bridge structure at dusk" />
     </div>
   </main>
 
+  <!-- ======= ABOUT ======= -->
+  <section id="about" class="container">
+    <div class="section-head">
+      <h2 class="section-title">About</h2>
+      <p class="section-desc">Who I am · What I do · Where I'm going</p>
+    </div>
+
+    <div class="about">
+      <!-- LEFT CARD: PROFILE / EXPERIENCE TIMELINE -->
+      <article class="card" style="position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;pointer-events:none;
+          background:
+            radial-gradient(circle at 15% 20%,rgba(96,165,250,.12) 0%,rgba(0,0,0,0) 70%),
+            radial-gradient(circle at 80% 30%,rgba(34,211,238,.08) 0%,rgba(0,0,0,0) 70%);
+        "></div>
+
+        <h3 style="margin-top:0;display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--brand)"></span>
+          Profile & Experience
+        </h3>
+
+        <p style="position:relative;z-index:1;line-height:1.5;font-size:15px;color:var(--text);margin-bottom:20px">
+          Civil Engineer (B.Eng., Kathmandu University, 2023) and Engineering Business & Safety Management
+          grad (Confederation College, Canada, 2025). I bring hands-on site supervision experience from Nepal
+          and real-world production leadership experience from Canada — combining field awareness, coordination,
+          safety, and execution.
+        </p>
+
+        <div style="
+          position:relative;z-index:1;
+          border-left:2px solid rgba(148,163,184,.3);
+          padding-left:16px;
+          display:grid;
+          row-gap:16px;
+          font-size:14px;
+          line-height:1.4;
+          color:var(--muted)
+        ">
+          <div style="position:relative">
+            <div style="position:absolute;left:-26px;top:2px;width:10px;height:10px;border-radius:999px;background:var(--brand);box-shadow:0 0 10px var(--brand)"></div>
+            <div style="color:var(--text);font-weight:600">Nilgiri Khola Hydropower (110 MW)</div>
+            <div style="font-style:italic;color:var(--muted)">Rebar + BBS · Field modifications in AutoCAD</div>
+            <div>Monitored reinforcement and concreting in powerhouse/switchyard. Produced Bar Bending Schedules and ensured specs were followed.</div>
+          </div>
+
+          <div style="position:relative">
+            <div style="position:absolute;left:-26px;top:2px;width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 10px var(--accent)"></div>
+            <div style="color:var(--text);font-weight:600">Nawadurga Construction</div>
+            <div style="font-style:italic;color:var(--muted)">Site supervision · Drawings · Quantity take-offs</div>
+            <div>Coordinated with contractors and clients, tracked quality and schedule, and produced technical drawings and estimates using AutoCAD / Civil 3D.</div>
+          </div>
+
+          <div style="position:relative">
+            <div style="position:absolute;left:-26px;top:2px;width:10px;height:10px;border-radius:999px;background:var(--brand-2);box-shadow:0 0 10px var(--brand-2)"></div>
+            <div style="color:var(--text);font-weight:600">Assistant Production Manager (Canada)</div>
+            <div style="font-style:italic;color:var(--muted)">Scheduling · QA · Cost control</div>
+            <div>Lead daily operations, allocate people/resources, solve issues fast, and protect quality and turnaround for clients.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- RIGHT CARD: SKILLS / GOAL BLOCK -->
+      <aside class="card" style="display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <h3 style="margin-top:0;display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--brand-2)"></span>
+            Core Skills
+          </h3>
+
+          <ul class="list" style="color:var(--text);font-size:15px;line-height:1.5">
+            <li><strong>Software:</strong> AutoCAD · Civil 3D · ETABS · MS Project · Microsoft Office</li>
+            <li><strong>Technical:</strong> drawings, take-offs, estimates, reporting, scheduling</li>
+            <li><strong>Coordination:</strong> team leadership, client communication, issue resolution</li>
+            <li><strong>Safety & Quality:</strong> WHMIS-trained; workflow, compliance, QA mindset</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(148,163,184,.2)">
+          <div style="font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase">
+            Career Direction
+          </div>
+          <div style="font-size:15px;line-height:1.5;color:var(--text);font-weight:500;margin-top:6px">
+            Working toward my P.Eng path in Canada with a focus on structural design. Actively seeking
+            entry-level Civil / Project Coordinator roles under a licensed engineer to build experience in
+            structural systems, construction delivery, and project execution.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ======= PROJECTS ======= -->
+  <section id="projects" class="container">
+    <div class="section-head">
+      <h2 class="section-title">Projects & Drawings</h2>
+      <p class="section-desc">Selected work · click a card for details</p>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:14px;line-height:1.3">
+        <strong style="color:var(--text)">Filters:</strong>
+        <button class="btn btn-ghost" data-filter="all">All</button>
+        <button class="btn btn-ghost" data-filter="cad">CAD</button>
+        <button class="btn btn-ghost" data-filter="civil3d">Civil 3D</button>
+        <button class="btn btn-ghost" data-filter="structural">Structural</button>
+        <button class="btn btn-ghost" data-filter="report">Reports</button>
+      </div>
+    </div>
+
+    <!-- Project cards render here -->
+    <div id="project-grid" class="grid" aria-live="polite"></div>
+  </section>
+
+  <!-- ======= RESUME ======= -->
+  <section id="resume" class="container">
+    <div class="section-head">
+      <h2 class="section-title">Resume</h2>
+      <p class="section-desc">PDF preview · downloadable</p>
+    </div>
+
+    <div class="card">
+      <iframe class="resume-embed" src="assets/resume.pdf" title="Biraj Thapa – Resume PDF"></iframe>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn btn-primary" href="assets/resume.pdf" download>Download PDF</a>
+        <a class="btn btn-ghost" href="#contact">Request an updated version</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
   <section id="contact" class="container">
     <div class="section-head">
       <h2 class="section-title">Contact</h2>
       <p class="section-desc">Let’s discuss opportunities or collaborations</p>
     </div>
-    <div class="card" style="padding:24px">
-      <h3>Email</h3>
-      <p><a href="mailto:thapa.biraj25@gmail.com">thapa.biraj25@gmail.com</a></p>
-      <h3>LinkedIn</h3>
-      <p><a href="https://linkedin.com/in/imbiraj25" target="_blank">linkedin.com/in/imbiraj25</a></p>
-      <h3>Location</h3>
-      <p>Thunder Bay, Ontario, Canada</p>
+
+    <div class="contact-grid">
+      <!-- LEFT: info -->
+      <div class="card">
+        <h3 style="margin-top:0">Email</h3>
+        <p><a href="mailto:thapa.biraj25@gmail.com">thapa.biraj25@gmail.com</a></p>
+
+        <h3>LinkedIn</h3>
+        <p><a href="https://linkedin.com/in/imbiraj25" target="_blank">linkedin.com/in/imbiraj25</a></p>
+
+        <h3>Location</h3>
+        <p>Thunder Bay, Ontario, Canada</p>
+      </div>
+
+      <!-- RIGHT: form -->
+      <form class="card" onsubmit="sendForm(event)">
+        <h3 style="margin-top:0">Quick Message</h3>
+        <div class="row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Hello Biraj, I’d like to discuss…" required></textarea>
+        </div>
+        <button class="btn btn-primary" style="margin-top:12px" type="submit">Send</button>
+        <p id="form-status" class="hide" role="status" aria-live="polite" style="margin-top:10px"></p>
+      </form>
     </div>
   </section>
 
+  <!-- ======= FOOTER ======= -->
   <footer>
     © <span id="year"></span> Biraj Thapa · Built with ♥ by ARIS
   </footer>
 
+  <!-- ======= LIGHTBOX & DATA / SCRIPTS ======= -->
+  <dialog id="lightbox" style="border:none;border-radius:16px;max-width:min(980px, 96vw);width:96vw;background:var(--card);color:var(--text);box-shadow:var(--shadow)">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.12)">
+      <strong id="lb-title"></strong>
+      <button class="btn btn-ghost" onclick="closeLightbox()">Close</button>
+    </div>
+    <div id="lb-body" style="padding:12px 12px 18px"></div>
+  </dialog>
+
   <script>
+    // -------- PROJECT DATA: customize these cards for your work --------
+    const PROJECTS = [
+      {
+        title: "Nilgiri Khola Hydropower – Rebar & BBS",
+        year: "2022/23",
+        tags: ["cad", "structural"],
+        cover: "https://images.unsplash.com/photo-1551746908-7d536c7c63c9?q=80&w=1600&auto=format&fit=crop",
+        summary: "Monitored rebar works in powerhouse & switchyard; prepared Bar Bending Schedules and field modifications in AutoCAD.",
+        detailsHTML: `
+          <p><strong>Scope:</strong> Powerhouse & switchyard civil works</p>
+          <ul>
+            <li>Rebar monitoring, concreting checks, spec compliance</li>
+            <li>Prepared <em>Bar Bending Schedules (BBS)</em></li>
+            <li>Field modifications using AutoCAD</li>
+          </ul>
+          <p><em>(You can add screenshots / PDFs of drawings here later.)</em></p>
+        `
+      },
+      {
+        title: "Nawadurga – Site Supervision & CAD",
+        year: "2023",
+        tags: ["cad", "civil3d"],
+        cover: "https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=1600&auto=format&fit=crop",
+        summary: "Supervised on-site activities; produced technical drawings, cost estimates and take-offs using AutoCAD / Civil 3D.",
+        detailsHTML: `
+          <p><strong>Scope:</strong> Residential & infrastructure works</p>
+          <ul>
+            <li>Site supervision, schedule & quality tracking</li>
+            <li>AutoCAD drawings; Civil 3D model communication</li>
+            <li>Quantity take-offs and cost estimates</li>
+          </ul>
+        `
+      },
+      {
+        title: "Bridge Modelling Study (ETABS/Civil 3D)",
+        year: "2024/25",
+        tags: ["structural"],
+        cover: "https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1600&auto=format&fit=crop",
+        summary: "Exploratory modelling of a cable-stayed concept; load paths, deck stiffness and pylon proportioning insights.",
+        detailsHTML: `
+          <p>Concept design and analysis of a cable-stayed bridge, including deck behavior and pylon proportioning. Screenshots from ETABS and section sketches can go here.</p>
+        `
+      },
+    ];
+
+    // -------- RENDERING LOGIC --------
+    const grid = document.getElementById('project-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lbTitle = document.getElementById('lb-title');
+    const lbBody = document.getElementById('lb-body');
+
+    function render(list){
+      grid.innerHTML = list.map(card).join('');
+    }
+
+    function card(p){
+      // We have to escape quotes for onclick, so we build a safe dataset form instead
+      const dataAttr = encodeURIComponent(JSON.stringify(p));
+      return `
+        <article class="project" tabindex="0"
+          role="button"
+          aria-label="${p.title}"
+          data-payload="${dataAttr}">
+          <img class="project-img" src="${p.cover}" alt="${p.title}"/>
+          <div class="project-body">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+              <h3 style="margin:0;font-size:18px">${p.title}</h3>
+              <span style="color:var(--muted);font-size:12px">${p.year}</span>
+            </div>
+            <p style="margin:8px 0 10px;color:var(--muted)">${p.summary}</p>
+            ${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}
+          </div>
+        </article>
+      `;
+    }
+
+    function openLightbox(p){
+      lbTitle.textContent = p.title;
+      lbBody.innerHTML = `
+        <img src="${p.cover}" alt="${p.title}" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,.12);margin-bottom:10px"/>
+        ${p.detailsHTML}
+      `;
+      if(typeof lightbox.showModal === 'function') lightbox.showModal();
+    }
+    function closeLightbox(){
+      lightbox.close();
+    }
+
+    // click handler for project cards
+    grid.addEventListener('click', e => {
+      const cardEl = e.target.closest('.project');
+      if(!cardEl) return;
+      const payload = cardEl.getAttribute('data-payload');
+      if(!payload) return;
+      const data = JSON.parse(decodeURIComponent(payload));
+      openLightbox(data);
+    });
+    grid.addEventListener('keypress', e => {
+      if(e.key !== 'Enter') return;
+      const cardEl = e.target.closest('.project');
+      if(!cardEl) return;
+      const payload = cardEl.getAttribute('data-payload');
+      if(!payload) return;
+      const data = JSON.parse(decodeURIComponent(payload));
+      openLightbox(data);
+    });
+
+    // FILTER BUTTONS
+    document.querySelectorAll('[data-filter]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const k = btn.dataset.filter;
+        if(k==='all') return render(PROJECTS);
+        render(PROJECTS.filter(p=>p.tags.includes(k)));
+      })
+    })
+
+    // CONTACT FORM HANDLER
+    function sendForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const body = encodeURIComponent(`Hi Biraj,\n\n${msg}\n\n— ${name} (${email})`);
+      window.location.href = `mailto:thapa.biraj25@gmail.com?subject=Portfolio%20Inquiry&body=${body}`;
+      const s = document.getElementById('form-status');
+      s.textContent = 'Opening your email app…';
+      s.classList.remove('hide');
+    }
+
+    // FOOTER YEAR
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // INITIAL RENDER
+    render(PROJECTS);
   </script>
 </body>
 </html>
