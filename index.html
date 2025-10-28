@@ -296,6 +296,58 @@
       .cta{flex-wrap:wrap}
       form .row{grid-template-columns:1fr}
     }
+    /* Mobile nav base state */
+.nav-toggle {
+  display:none;
+  background:transparent;
+  border:1px solid rgba(148,163,184,.4);
+  color:var(--text);
+  font-size:18px;
+  line-height:1;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:600;
+}
+
+.mobile-menu {
+  position:absolute;
+  top:56px; /* just below the navbar */
+  right:16px;
+  background:var(--card);
+  border:1px solid rgba(148,163,184,.25);
+  box-shadow:var(--shadow);
+  border-radius:12px;
+  padding:12px;
+  display:none;
+  flex-direction:column;
+  min-width:160px;
+  z-index:100;
+}
+
+.mobile-menu a {
+  color:var(--text);
+  text-decoration:none;
+  font-size:15px;
+  padding:10px 8px;
+  border-radius:8px;
+  display:block;
+  font-weight:500;
+}
+
+.mobile-menu a:hover {
+  background:rgba(148,163,184,.1);
+}
+
+/* Show hamburger / hide desktop links on small screens */
+@media (max-width:640px){
+  .nav-links {
+    display:none;
+  }
+  .nav-toggle {
+    display:block;
+  }
+}
+
   </style>
 </head>
 
@@ -684,5 +736,6 @@
   </script>
 </body>
 </html>
+
 
 
