@@ -715,22 +715,82 @@
   <script>
     // -------- PROJECT DATA: customize these cards for your work --------
     const PROJECTS = [
-      {
-        title: "Nilgiri Khola Hydropower – Rebar & BBS",
-        year: "2022/23",
-        tags: ["cad", "structural"],
-        cover: "https://images.unsplash.com/photo-1551746908-7d536c7c63c9?q=80&w=1600&auto=format&fit=crop",
-        summary: "Monitored rebar works in powerhouse & switchyard; prepared Bar Bending Schedules and field modifications in AutoCAD.",
-        detailsHTML: `
-          <p><strong>Scope:</strong> Powerhouse & switchyard civil works</p>
-          <ul>
-            <li>Rebar monitoring, concreting checks, spec compliance</li>
-            <li>Prepared <em>Bar Bending Schedules (BBS)</em></li>
-            <li>Field modifications using AutoCAD</li>
-          </ul>
-          <p><em>(You can add screenshots / PDFs of drawings here later.)</em></p>
-        `
-      },
+     {
+  title: "Nilgiri Khola Hydropower – Switchyard / Powerhouse / BBS",
+  year: "2022/23",
+  tags: ["cad", "structural", "report"],
+  cover: "assets/nilgiri-cover.jpg", 
+  summary: "Hydropower internship work: switchyard drawings & site checks, powerhouse generator casing detailing, and BBS preparation (selected samples).",
+  detailsHTML: `
+    <p><strong>Project:</strong> Nilgiri Khola Hydropower Project (110 MW)</p>
+    <p><strong>My contributions:</strong> site supervision support, reinforcement checks, AutoCAD field modifications, and BBS preparation for switchyard components.</p>
+
+    <details class="lb-section" open>
+      <summary>Switchyard → Drawings & Site Pictures</summary>
+      <p style="color:var(--muted);margin:8px 0 0">
+        Selected sample visuals (low-detail). Replace the placeholders below with your real files in <code>assets/</code>.
+      </p>
+
+      <div class="lb-gallery">
+        <a href="assets/nilgiri-switchyard-dwg-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/nilgiri-switchyard-dwg-1.jpg" alt="Switchyard drawing sample 1"/>
+        </a>
+        <a href="assets/nilgiri-switchyard-site-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/nilgiri-switchyard-site-1.jpg" alt="Switchyard site photo sample 1"/>
+        </a>
+        <a href="assets/nilgiri-switchyard-site-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/nilgiri-switchyard-site-2.jpg" alt="Switchyard site photo sample 2"/>
+        </a>
+      </div>
+
+      <p style="margin-top:10px">
+        <a class="btn btn-ghost" href="assets/nilgiri-switchyard-sample.pdf" target="_blank" rel="noopener">
+          Open Switchyard Sample PDF
+        </a>
+      </p>
+    </details>
+
+    <details class="lb-section">
+      <summary>Powerhouse → Generator Casing Drawings & Pictures</summary>
+      <p style="color:var(--muted);margin:8px 0 0">
+        Add your generator casing drawing screenshots / photos here.
+      </p>
+
+      <div class="lb-gallery">
+        <a href="assets/nilgiri-generator-casing-dwg-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/nilgiri-generator-casing-dwg-1.jpg" alt="Generator casing drawing sample 1"/>
+        </a>
+        <a href="assets/nilgiri-generator-casing-site-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/nilgiri-generator-casing-site-1.jpg" alt="Generator casing site photo sample 1"/>
+        </a>
+      </div>
+
+      <p style="margin-top:10px">
+        <a class="btn btn-ghost" href="assets/nilgiri-generator-casing-sample.pdf" target="_blank" rel="noopener">
+          Open Generator Casing Sample PDF
+        </a>
+      </p>
+    </details>
+
+    <details class="lb-section">
+      <summary>BBS of Switchyard</summary>
+      <p style="color:var(--muted);margin:8px 0 0">
+        Add a redacted sample of your Bar Bending Schedule (BBS). PDF works best.
+      </p>
+
+      <p style="margin-top:10px">
+        <a class="btn btn-primary" href="assets/nilgiri-bbs-switchyard-sample.pdf" target="_blank" rel="noopener">
+          View BBS Sample (PDF)
+        </a>
+      </p>
+    </details>
+
+    <div class="lb-note">
+      <strong>PS:</strong> Complete site photos and detailed drawings are not uploaded in full, as they may be subject to confidentiality and copyright restrictions related to Nilgiri Hydropower and its project documentation. Only selected, low-detail samples are shown here for portfolio purposes.
+    </div>
+  `
+},
+,
       {
         title: "Nawadurga – Site Supervision & CAD",
         year: "2023",
@@ -857,6 +917,7 @@
   </script>
 </body>
 </html>
+
 
 
 
