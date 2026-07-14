@@ -3,470 +3,182 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biraj Thapa – Civil Engineer</title>
+  <title>Biraj Thapa - Civil Engineer</title>
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <meta name="description" content="Portfolio of Biraj Thapa – Civil Engineer & Project Coordinator in Canada. Projects, drawings, resume, and contact." />
+  <meta name="description" content="Portfolio of Biraj Thapa - Civil Engineer and Project Coordinator in Canada. Projects, drawings, resume, and contact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b1220;           /* deep navy */
-      --card:#121a2b;         /* slightly lighter */
-      --muted:#94a3b8;        /* slate-400 */
-      --text:#e6edf6;         /* near-white */
-      --brand:#60a5fa;        /* blue-400 */
-      --brand-2:#22d3ee;      /* cyan-400 */
-      --accent:#38bdf8;       /* sky-400 */
-      --ring: rgba(96, 165, 250, 0.5);
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.4);
+      --bg:#0b1220;
+      --card:#121a2b;
+      --card-2:#0e1729;
+      --muted:#94a3b8;
+      --text:#e6edf6;
+      --brand:#60a5fa;
+      --brand-2:#22d3ee;
+      --accent:#38bdf8;
+      --ring:rgba(96,165,250,.5);
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.4);
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{
       margin:0;
-      height:100%;
+      min-height:100%;
       background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%),
-        radial-gradient(900px 500px at 90% -20%, rgba(96,165,250,.08), transparent 60%),
+        radial-gradient(1200px 600px at 10% -10%,rgba(34,211,238,.08),transparent 60%),
+        radial-gradient(900px 500px at 90% -20%,rgba(96,165,250,.08),transparent 60%),
         var(--bg);
       color:var(--text);
-      font-family:Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
+    body{overflow-x:hidden}
     a{color:var(--brand);text-decoration:none}
     a:hover{opacity:.9}
-
+    img{max-width:100%}
     .container{max-width:1100px;margin-inline:auto;padding:24px}
 
-    /* NAVBAR */
     header{
       position:sticky;
       top:0;
-      background:linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.6));
-      backdrop-filter: blur(6px);
+      background:linear-gradient(180deg,rgba(11,18,32,.94),rgba(11,18,32,.72));
+      backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(148,163,184,.12);
-      z-index:50
+      z-index:50;
     }
-    nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      padding:14px 24px
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:800;
-      letter-spacing:.4px
-    }
-    .logo-badge{
-      display:grid;
-      place-items:center;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      color:#001b2b;
-      font-weight:900;
-      box-shadow:var(--shadow)
-    }
-    .nav-links{
-      display:flex;
-      gap:18px;
-      font-weight:600
-    }
-    .nav-links a{
-      padding:8px 12px;
-      border-radius:10px;
-      color:var(--text)
-    }
-    .nav-links a:hover{
-      background:rgba(148,163,184,.12)
-    }
+    nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 24px;position:relative}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px;min-width:0}
+    .logo-badge{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001b2b;font-weight:900;box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:18px;font-weight:600}
+    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--text)}
+    .nav-links a:hover{background:rgba(148,163,184,.12)}
+    .nav-toggle{display:none;background:transparent;border:1px solid rgba(148,163,184,.4);color:var(--text);font-size:20px;line-height:1;padding:8px 12px;border-radius:10px;font-weight:600}
+    .mobile-menu{position:absolute;top:64px;right:16px;background:var(--card);border:1px solid rgba(148,163,184,.25);box-shadow:var(--shadow);border-radius:12px;padding:12px;display:none;flex-direction:column;min-width:170px;z-index:100}
+    .mobile-menu a{color:var(--text);font-size:15px;padding:10px 8px;border-radius:8px;display:block;font-weight:600}
+    .mobile-menu a:hover{background:rgba(148,163,184,.1)}
 
-    /* HERO */
-    .hero{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      align-items:center;
-      padding:64px 24px
-    }
-    .hero-card{
-      padding:32px;
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border:1px solid rgba(148,163,184,.12);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow)
-    }
-    .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      font-size:13px;
-      color:var(--muted);
-      border:1px solid rgba(148,163,184,.2);
-      border-radius:999px;
-      padding:6px 10px
-    }
-    .title{
-      font-size:clamp(28px, 3.6vw, 44px);
-      line-height:1.1;
-      margin:10px 0 12px;
-      font-weight:800
-    }
-    .subtitle{
-      color:var(--muted);
-      max-width:62ch
-    }
-    .cta{
-      display:flex;
-      gap:12px;
-      margin-top:22px;
-      flex-wrap:wrap
-    }
-    .btn{
-      appearance:none;
-      border:none;
-      padding:12px 16px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.2s;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      font-size:14px;
-      line-height:1.2
-    }
-    .btn-primary{
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#001b2b
-    }
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:64px 24px}
+    .hero-card,.card{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:32px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);border:1px solid rgba(148,163,184,.2);border-radius:999px;padding:6px 10px}
+    .title{font-size:clamp(28px,3.6vw,44px);line-height:1.1;margin:10px 0 12px;font-weight:800}
+    .subtitle{color:var(--muted);max-width:62ch;line-height:1.6}
+    .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .btn{appearance:none;border:none;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-size:14px;line-height:1.2;font-family:inherit}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001b2b}
     .btn-primary:hover{transform:translateY(-1px)}
-    .btn-ghost{
-      background:transparent;
-      color:var(--text);
-      border:1px solid rgba(148,163,184,.25)
-    }
+    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(148,163,184,.25)}
     .btn-ghost:hover{background:rgba(148,163,184,.08)}
+    .hero-img{border-radius:var(--radius);border:1px solid rgba(148,163,184,.12);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-img img{width:100%;height:auto;display:block}
 
-    .hero-img{
-      border-radius:var(--radius);
-      border:1px solid rgba(148,163,184,.12);
-      overflow:hidden;
-      box-shadow:var(--shadow)
-    }
-    .hero-img img{
-      width:100%;
-      height:auto;
-      display:block
-    }
-
-    /* SECTION WRAPPER */
     section{padding:48px 24px}
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      margin-bottom:18px;
-      flex-wrap:wrap;
-      row-gap:8px
-    }
-    .section-title{
-      font-size:clamp(20px, 2vw, 28px);
-      font-weight:800
-    }
-    .section-desc{color:var(--muted);font-size:14px}
-
-    /* ABOUT LAYOUT */
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px
-    }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border:1px solid rgba(148,163,184,.12);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:24px;
-      position:relative;
-      overflow:hidden
-    }
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px;flex-wrap:wrap;row-gap:8px}
+    .section-title{font-size:clamp(20px,2vw,28px);font-weight:800;margin:0}
+    .section-desc{color:var(--muted);font-size:14px;margin:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{padding:24px;position:relative;overflow:hidden}
     .list{padding-left:18px}
 
-    /* PROJECTS */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px
-    }
-    .project{
-      position:relative;
-      overflow:hidden;
-      border-radius:14px;
-      border:1px solid rgba(148,163,184,.12);
-      background:var(--card);
-      cursor:pointer
-    }
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(148,163,184,.12);background:var(--card);cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .project:hover,.project:focus-visible{transform:translateY(-3px);border-color:rgba(96,165,250,.45);box-shadow:0 18px 38px rgba(0,0,0,.38);outline:none}
     .project:hover .project-img{transform:scale(1.04)}
-    .project-img{
-      width:100%;
-      aspect-ratio:16/10;
-      object-fit:cover;
-      transition:transform .3s
-    }
+    .project-img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform .3s}
     .project-body{padding:14px 14px 18px}
-    .tag{
-      display:inline-block;
-      margin-right:8px;
-      margin-bottom:8px;
-      padding:4px 8px;
-      font-size:12px;
-      border:1px solid rgba(148,163,184,.25);
-      border-radius:999px;
-      color:var(--muted)
-    }
+    .tag{display:inline-block;margin-right:8px;margin-bottom:8px;padding:4px 8px;font-size:12px;border:1px solid rgba(148,163,184,.25);border-radius:999px;color:var(--muted)}
 
-    /* RESUME EMBED */
-    .resume-embed{
-      width:100%;
-      min-height:680px;
-      border:1px solid rgba(148,163,184,.12);
-      border-radius:12px
-    }
-
-    /* CONTACT */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px
-    }
-    form .row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px
-    }
-    input, textarea{
-      width:100%;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid rgba(148,163,184,.25);
-      background:#0e1729;
-      color:var(--text);
-      font-family:inherit;
-      font-size:14px;
-      line-height:1.3
-    }
-    input:focus, textarea:focus{
-      outline:2px solid var(--ring);
-      border-color:transparent
-    }
+    .resume-embed{width:100%;min-height:680px;border:1px solid rgba(148,163,184,.12);border-radius:12px;background:white}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:var(--card-2);color:var(--text);font-family:inherit;font-size:14px;line-height:1.3}
+    input:focus,textarea:focus{outline:2px solid var(--ring);border-color:transparent}
     textarea{min-height:140px;resize:vertical}
     label{display:block;font-size:13px;font-weight:500;margin-bottom:4px;color:var(--text)}
-
-    /* FOOTER */
-    footer{
-      padding:28px 24px;
-      color:var(--muted);
-      border-top:1px solid rgba(148,163,184,.12);
-      text-align:center;
-      font-size:13px
-    }
-
-    /* MISC */
+    footer{padding:28px 24px;color:var(--muted);border-top:1px solid rgba(148,163,184,.12);text-align:center;font-size:13px}
     .hide{display:none}
 
-    /* RESPONSIVE */
+    /* Project case-study modal */
+    #lightbox{padding:0;border:none;border-radius:18px;max-width:min(1080px,96vw);width:96vw;max-height:92vh;background:var(--card);color:var(--text);box-shadow:0 30px 90px rgba(0,0,0,.72);overflow:hidden}
+    #lightbox::backdrop{background:rgba(2,6,23,.82);backdrop-filter:blur(5px)}
+    .dialog-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid rgba(148,163,184,.14);background:rgba(18,26,43,.97);position:sticky;top:0;z-index:3}
+    .dialog-head strong{font-size:16px;line-height:1.3}
+    #lb-body{padding:18px;overflow-y:auto;max-height:calc(92vh - 70px)}
+    .project-cover-large{width:100%;max-height:470px;object-fit:cover;border-radius:14px;border:1px solid rgba(148,163,184,.12);margin-bottom:18px}
+    .project-intro{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:start;margin-bottom:18px}
+    .project-lead{font-size:15px;line-height:1.65;color:var(--muted);margin:0}
+    .project-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .meta-card{padding:12px;border:1px solid rgba(148,163,184,.14);background:rgba(255,255,255,.025);border-radius:12px}
+    .meta-label{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+    .meta-value{font-weight:700;font-size:14px;line-height:1.35}
+    .project-section{margin-top:16px;padding:16px;border:1px solid rgba(148,163,184,.17);border-radius:14px;background:rgba(255,255,255,.018)}
+    .project-section h3{margin:0 0 8px;font-size:19px}
+    .project-section p{color:var(--muted);line-height:1.6}
+    .project-section ul{color:var(--muted);line-height:1.65;padding-left:20px}
+    .project-section li::marker{color:var(--brand-2)}
+    .section-kicker{font-size:11px;color:var(--brand-2);text-transform:uppercase;letter-spacing:.12em;font-weight:800;margin-bottom:6px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+    .gallery-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .gallery-item{display:block;overflow:hidden;border-radius:11px;border:1px solid rgba(148,163,184,.14);background:#08111f}
+    .gallery-item img{width:100%;height:190px;object-fit:cover;display:block;transition:transform .25s}
+    .gallery-item:hover img{transform:scale(1.035)}
+    .gallery-caption{padding:9px 10px;color:var(--muted);font-size:12px;line-height:1.4}
+    .drawing-item img{height:auto;aspect-ratio:auto;object-fit:contain;background:white}
+    .project-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .skill-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skill-pill{padding:7px 10px;border-radius:999px;border:1px solid rgba(96,165,250,.25);background:rgba(96,165,250,.07);font-size:12px;font-weight:700;color:#cfe5ff}
+    .confidentiality{margin-top:16px;padding:14px 16px;border-left:4px solid var(--brand-2);background:rgba(34,211,238,.07);border-radius:12px;color:var(--muted);font-size:13px;line-height:1.55}
+    .confidentiality strong{color:var(--text)}
+
     @media (max-width:980px){
       .hero{grid-template-columns:1fr}
       .about{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr 1fr}
       .contact-grid{grid-template-columns:1fr}
+      .project-intro{grid-template-columns:1fr}
     }
-  @media (max-width:640px){
-  nav{padding:12px 16px}
 
-  /* tighter general spacing for phone */
-  section{
-    padding:32px 16px;
-  }
-  .hero{
-    padding:32px 16px;
-  }
-  .card{
-    padding:20px;
-  }
+    @media (max-width:640px){
+      nav{padding:12px 16px}
+      .nav-links{display:none}
+      .nav-toggle{display:block}
+      .logo > div:last-child > div:first-child{font-size:12px!important}
+      .logo > div:last-child > div:last-child{font-size:14px}
+      section{padding:32px 16px}
+      .hero{padding:32px 16px;grid-template-columns:1fr}
+      .hero-img{display:none}
+      .hero-card,.card{padding:20px}
+      .title{font-size:28px;line-height:1.2}
+      .subtitle{font-size:15px;line-height:1.55}
+      .cta{flex-direction:column;align-items:stretch}
+      .cta .btn{width:100%;font-size:15px}
+      .grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      form .row{grid-template-columns:1fr}
+      #lightbox{width:100vw;max-width:100vw;max-height:100vh;height:100vh;border-radius:0}
+      #lb-body{max-height:calc(100vh - 66px);padding:14px}
+      .dialog-head{padding:12px 14px}
+      .project-cover-large{max-height:270px}
+      .project-meta{grid-template-columns:1fr 1fr}
+      .gallery-grid,.gallery-grid.two{grid-template-columns:1fr 1fr}
+      .gallery-item img{height:150px}
+      .drawing-item{grid-column:1/-1}
+      .drawing-item img{height:auto}
+      .project-columns{grid-template-columns:1fr}
+    }
 
-  /* hero layout */
-  .hero{
-    grid-template-columns:1fr;
-  }
-
-  /* optionally hide the hero image on phone to reduce scroll height */
-  .hero-img{
-    display:none;
-  }
-
-  /* heading size on phone */
-  .title{
-    font-size:28px;
-    line-height:1.2;
-  }
-
-  .subtitle{
-    font-size:15px;
-    line-height:1.5;
-  }
-
-  /* stack hero buttons full width */
-  .cta{
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .cta .btn{
-    width:100%;
-    justify-content:center;
-    text-align:center;
-    font-size:15px;
-    line-height:1.3;
-  }
-
-  /* projects grid: 1 card per row */
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  /* contact layout stacks */
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  /* contact form two-column -> one column */
-  form .row{
-    grid-template-columns:1fr;
-  }
-}
-
-    /* Mobile nav base state */
-.nav-toggle {
-  display:none;
-  background:transparent;
-  border:1px solid rgba(148,163,184,.4);
-  color:var(--text);
-  font-size:18px;
-  line-height:1;
-  padding:8px 12px;
-  border-radius:10px;
-  font-weight:600;
-}
-
-.mobile-menu {
-  position:absolute;
-  top:56px; /* just below the navbar */
-  right:16px;
-  background:var(--card);
-  border:1px solid rgba(148,163,184,.25);
-  box-shadow:var(--shadow);
-  border-radius:12px;
-  padding:12px;
-  display:none;
-  flex-direction:column;
-  min-width:160px;
-  z-index:100;
-}
-
-.mobile-menu a {
-  color:var(--text);
-  text-decoration:none;
-  font-size:15px;
-  padding:10px 8px;
-  border-radius:8px;
-  display:block;
-  font-weight:500;
-}
-
-.mobile-menu a:hover {
-  background:rgba(148,163,184,.1);
-}
-
-/* Show hamburger / hide desktop links on small screens */
-@media (max-width:640px){
-  .nav-links {
-    display:none;
-  }
-  .nav-toggle {
-    display:block;
-  }
-}
-
-    /* Lightbox subsections */
-.lb-section {
-  border: 1px solid rgba(148,163,184,.18);
-  border-radius: 12px;
-  padding: 10px 12px;
-  margin: 10px 0;
-  background: rgba(255,255,255,.02);
-}
-
-.lb-section summary{
-  cursor: pointer;
-  font-weight: 700;
-  color: var(--text);
-  list-style: none;
-}
-
-.lb-section summary::-webkit-details-marker { display:none; }
-
-.lb-section summary::after{
-  content: "▾";
-  float: right;
-  color: var(--muted);
-}
-
-.lb-section[open] summary::after{
-  content: "▴";
-}
-
-.lb-gallery{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.lb-gallery a, .lb-gallery img{
-  width: 100%;
-  display:block;
-}
-
-.lb-gallery img{
-  border-radius: 10px;
-  border:1px solid rgba(148,163,184,.12);
-}
-
-.lb-note{
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-left: 3px solid rgba(34,211,238,.6);
-  background: rgba(34,211,238,.06);
-  border-radius: 12px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.45;
-}
-
+    @media (max-width:420px){
+      .project-meta,.gallery-grid,.gallery-grid.two{grid-template-columns:1fr}
+      .gallery-item img{height:210px}
+    }
   </style>
 </head>
-
 <body>
-  <!-- ======= NAVBAR ======= -->
   <header>
     <nav class="container">
       <div class="logo">
@@ -476,178 +188,126 @@
           <div style="font-weight:800">Civil Engineer</div>
         </div>
       </div>
-      <!-- desktop nav -->
-<div class="nav-links" role="navigation" aria-label="Primary">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#resume">Resume</a>
-  <a href="#contact">Contact</a>
-</div>
 
-<!-- mobile nav button -->
-<button class="nav-toggle" aria-label="Open menu" onclick="toggleMenu()">
-  ☰
-</button>
+      <div class="nav-links" role="navigation" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<!-- mobile dropdown menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="toggleMenu()">Home</a>
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#projects" onclick="toggleMenu()">Projects</a>
-  <a href="#resume" onclick="toggleMenu()">Resume</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-</div>
-
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a>
+        <a href="#resume" onclick="closeMenu()">Resume</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+      </div>
     </nav>
   </header>
 
-  <!-- ======= HERO ======= -->
   <main id="home" class="container hero" aria-labelledby="home-title">
-    <div class="hero-card" role="region" aria-label="Intro">
+    <div class="hero-card" role="region" aria-label="Introduction">
       <span class="kicker">Civil Engineer · Project Coordinator · Structural Enthusiast</span>
       <h1 id="home-title" class="title">Designing infrastructure that is safe, efficient, and future-ready.</h1>
-      <p class="subtitle">
-        I’m Biraj Thapa, a Civil Engineer based in Canada with experience in construction supervision,
-        quantity take-offs, and CAD modelling. Post-grad in Engineering Business & Safety Management
-        (Confederation College, 2025). Aspiring Structural Engineer working toward P.Eng.
-      </p>
+      <p class="subtitle">I’m Biraj Thapa, a Civil Engineer based in Canada with experience in construction supervision, quantity take-offs, and CAD modelling. Post-graduate certificate in Engineering Business & Safety Management (Confederation College, 2025). Aspiring Structural Engineer working toward P.Eng. licensure.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#projects">View Projects</a>
         <a class="btn btn-ghost" href="assets/resume.pdf" download>Download Resume</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/imbiraj25" target="_blank">Connect on LinkedIn</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/imbiraj25" target="_blank" rel="noopener">Connect on LinkedIn</a>
       </div>
     </div>
-    <div class="hero-img" aria-hidden="true">
-      <!-- you can replace this image with one in your assets folder later -->
-      <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1400&auto=format&fit=crop"
-           alt="Bridge structure at dusk" />
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1400&auto=format&fit=crop" alt="Civil engineering bridge structure" />
     </div>
   </main>
 
-  <!-- ======= ABOUT ======= -->
   <section id="about" class="container">
     <div class="section-head">
       <h2 class="section-title">About</h2>
-      <p class="section-desc">Who I am · What I do · Where I'm going</p>
+      <p class="section-desc">Who I am · What I do · Where I’m going</p>
     </div>
 
     <div class="about">
-      <!-- LEFT CARD: PROFILE / EXPERIENCE TIMELINE -->
-      <article class="card" style="position:relative;overflow:hidden">
-        <div style="position:absolute;inset:0;pointer-events:none;
-          background:
-            radial-gradient(circle at 15% 20%,rgba(96,165,250,.12) 0%,rgba(0,0,0,0) 70%),
-            radial-gradient(circle at 80% 30%,rgba(34,211,238,.08) 0%,rgba(0,0,0,0) 70%);
-        "></div>
-
-        <h3 style="margin-top:0;display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700">
+      <article class="card">
+        <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 20%,rgba(96,165,250,.12) 0%,transparent 70%),radial-gradient(circle at 80% 30%,rgba(34,211,238,.08) 0%,transparent 70%)"></div>
+        <h3 style="margin-top:0;display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;position:relative">
           <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--brand)"></span>
           Profile & Experience
         </h3>
-
-        <p style="position:relative;z-index:1;line-height:1.5;font-size:15px;color:var(--text);margin-bottom:20px">
-          Civil Engineer (B.Eng., Kathmandu University, 2023) and Engineering Business & Safety Management
-          grad (Confederation College, Canada, 2025). I bring hands-on site supervision experience from Nepal
-          and real-world production leadership experience from Canada — combining field awareness, coordination,
-          safety, and execution.
-        </p>
-
-        <div style="
-          position:relative;z-index:1;
-          border-left:2px solid rgba(148,163,184,.3);
-          padding-left:16px;
-          display:grid;
-          row-gap:16px;
-          font-size:14px;
-          line-height:1.4;
-          color:var(--muted)
-        ">
+        <p style="position:relative;z-index:1;line-height:1.55;font-size:15px;color:var(--text);margin-bottom:20px">Civil Engineer (B.Eng., Kathmandu University, 2023) and Engineering Business & Safety Management graduate (Confederation College, Canada, 2025). I bring hands-on site supervision experience from Nepal and production leadership experience from Canada - combining field awareness, coordination, safety, and execution.</p>
+        <div style="position:relative;z-index:1;border-left:2px solid rgba(148,163,184,.3);padding-left:16px;display:grid;row-gap:16px;font-size:14px;line-height:1.45;color:var(--muted)">
           <div style="position:relative">
             <div style="position:absolute;left:-26px;top:2px;width:10px;height:10px;border-radius:999px;background:var(--brand);box-shadow:0 0 10px var(--brand)"></div>
-            <div style="color:var(--text);font-weight:600">Nilgiri Khola Hydropower (110 MW)</div>
-            <div style="font-style:italic;color:var(--muted)">Rebar + BBS · Field modifications in AutoCAD</div>
-            <div>Monitored reinforcement and concreting in powerhouse/switchyard. Produced Bar Bending Schedules and ensured specs were followed.</div>
+            <div style="color:var(--text);font-weight:600">Nilgiri Khola Hydropower (N1 & N2)</div>
+            <div style="font-style:italic">Reinforcement · BBS · Surveying · QA/QC</div>
+            <div>Supported site monitoring at the powerhouse, tailrace and switchyard, including reinforcement checks, concreting observation, drawing interpretation and switchyard BBS work.</div>
           </div>
-
           <div style="position:relative">
             <div style="position:absolute;left:-26px;top:2px;width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 10px var(--accent)"></div>
             <div style="color:var(--text);font-weight:600">Nawadurga Construction</div>
-            <div style="font-style:italic;color:var(--muted)">Site supervision · Drawings · Quantity take-offs</div>
-            <div>Coordinated with contractors and clients, tracked quality and schedule, and produced technical drawings and estimates using AutoCAD / Civil 3D.</div>
+            <div style="font-style:italic">Site supervision · Drawings · Quantity take-offs</div>
+            <div>Coordinated with contractors and clients, tracked quality and schedule, and prepared technical drawings and estimates using AutoCAD and Civil 3D.</div>
           </div>
-
           <div style="position:relative">
             <div style="position:absolute;left:-26px;top:2px;width:10px;height:10px;border-radius:999px;background:var(--brand-2);box-shadow:0 0 10px var(--brand-2)"></div>
             <div style="color:var(--text);font-weight:600">Assistant Production Manager (Canada)</div>
-            <div style="font-style:italic;color:var(--muted)">Scheduling · QA · Cost control</div>
-            <div>Lead daily operations, allocate people/resources, solve issues fast, and protect quality and turnaround for clients.</div>
+            <div style="font-style:italic">Scheduling · QA · Cost control</div>
+            <div>Lead daily operations, allocate people and resources, resolve production issues and protect quality and turnaround for clients.</div>
           </div>
         </div>
       </article>
 
-      <!-- RIGHT CARD: SKILLS / GOAL BLOCK -->
       <aside class="card" style="display:flex;flex-direction:column;justify-content:space-between">
         <div>
           <h3 style="margin-top:0;display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700">
             <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--brand-2)"></span>
             Core Skills
           </h3>
-
-          <ul class="list" style="color:var(--text);font-size:15px;line-height:1.5">
-            <li><strong>Software:</strong> AutoCAD · Civil 3D · ETABS · MS Project · Microsoft Office</li>
-            <li><strong>Technical:</strong> drawings, take-offs, estimates, reporting, scheduling</li>
+          <ul class="list" style="color:var(--text);font-size:15px;line-height:1.55">
+            <li><strong>Software:</strong> AutoCAD · Civil 3D · ETABS · MS Project · QGIS · Microsoft Office</li>
+            <li><strong>Technical:</strong> drawings, take-offs, BBS, estimates, reporting, scheduling</li>
+            <li><strong>Field:</strong> site review, reinforcement inspection support, surveying fundamentals, QA/QC</li>
             <li><strong>Coordination:</strong> team leadership, client communication, issue resolution</li>
-            <li><strong>Safety & Quality:</strong> WHMIS-trained; workflow, compliance, QA mindset</li>
+            <li><strong>Safety & Quality:</strong> WHMIS-trained; compliance and quality-focused mindset</li>
           </ul>
         </div>
-
         <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(148,163,184,.2)">
-          <div style="font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase">
-            Career Direction
-          </div>
-          <div style="font-size:15px;line-height:1.5;color:var(--text);font-weight:500;margin-top:6px">
-            Working toward my P.Eng path in Canada with a focus on structural design. Actively seeking
-            entry-level Civil / Project Coordinator roles under a licensed engineer to build experience in
-            structural systems, construction delivery, and project execution.
-          </div>
+          <div style="font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase">Career Direction</div>
+          <div style="font-size:15px;line-height:1.55;color:var(--text);font-weight:500;margin-top:6px">Working toward my P.Eng. path in Canada with a focus on structural and civil project delivery. Actively seeking entry-level Civil Engineering and Project Coordinator roles under experienced Professional Engineers.</div>
         </div>
       </aside>
     </div>
   </section>
 
-  <!-- ======= PROJECTS ======= -->
   <section id="projects" class="container">
     <div class="section-head">
       <h2 class="section-title">Projects & Drawings</h2>
-      <p class="section-desc">Selected work · click a card for details</p>
+      <p class="section-desc">Selected work · click a card for the full case study</p>
     </div>
-
-    <!-- Filter buttons -->
     <div class="card" style="margin-bottom:16px">
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:14px;line-height:1.3">
-        <strong style="color:var(--text)">Filters:</strong>
-        <button class="btn btn-ghost" data-filter="all">All</button>
-        <button class="btn btn-ghost" data-filter="cad">CAD</button>
-        <button class="btn btn-ghost" data-filter="civil3d">Civil 3D</button>
-        <button class="btn btn-ghost" data-filter="structural">Structural</button>
-        <button class="btn btn-ghost" data-filter="report">Reports</button>
+        <strong>Filters:</strong>
+        <button class="btn btn-ghost" type="button" data-filter="all">All</button>
+        <button class="btn btn-ghost" type="button" data-filter="cad">CAD</button>
+        <button class="btn btn-ghost" type="button" data-filter="civil3d">Civil 3D</button>
+        <button class="btn btn-ghost" type="button" data-filter="structural">Structural</button>
+        <button class="btn btn-ghost" type="button" data-filter="field">Field</button>
+        <button class="btn btn-ghost" type="button" data-filter="report">Reports</button>
       </div>
     </div>
-
-    <!-- Project cards render here -->
     <div id="project-grid" class="grid" aria-live="polite"></div>
   </section>
 
-  <!-- ======= RESUME ======= -->
   <section id="resume" class="container">
     <div class="section-head">
       <h2 class="section-title">Resume</h2>
       <p class="section-desc">PDF preview · downloadable</p>
     </div>
-
     <div class="card">
-      <iframe class="resume-embed" src="assets/resume.pdf" title="Biraj Thapa – Resume PDF"></iframe>
+      <iframe class="resume-embed" src="assets/resume.pdf" title="Biraj Thapa Resume PDF"></iframe>
       <div class="cta" style="margin-top:12px">
         <a class="btn btn-primary" href="assets/resume.pdf" download>Download PDF</a>
         <a class="btn btn-ghost" href="#contact">Request an updated version</a>
@@ -655,272 +315,274 @@
     </div>
   </section>
 
-  <!-- ======= CONTACT ======= -->
   <section id="contact" class="container">
     <div class="section-head">
       <h2 class="section-title">Contact</h2>
       <p class="section-desc">Let’s discuss opportunities or collaborations</p>
     </div>
-
     <div class="contact-grid">
-      <!-- LEFT: info -->
       <div class="card">
         <h3 style="margin-top:0">Email</h3>
         <p><a href="mailto:thapa.biraj25@gmail.com">thapa.biraj25@gmail.com</a></p>
-
         <h3>LinkedIn</h3>
-        <p><a href="https://linkedin.com/in/imbiraj25" target="_blank">linkedin.com/in/imbiraj25</a></p>
-
+        <p><a href="https://linkedin.com/in/imbiraj25" target="_blank" rel="noopener">linkedin.com/in/imbiraj25</a></p>
         <h3>Location</h3>
         <p>Thunder Bay, Ontario, Canada</p>
       </div>
-
-      <!-- RIGHT: form -->
       <form class="card" onsubmit="sendForm(event)">
         <h3 style="margin-top:0">Quick Message</h3>
         <div class="row">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="name@example.com" required />
-          </div>
+          <div><label for="name">Name</label><input id="name" name="name" placeholder="Your name" required /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="name@example.com" required /></div>
         </div>
-        <div style="margin-top:12px">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Hello Biraj, I’d like to discuss…" required></textarea>
-        </div>
+        <div style="margin-top:12px"><label for="message">Message</label><textarea id="message" name="message" placeholder="Hello Biraj, I’d like to discuss…" required></textarea></div>
         <button class="btn btn-primary" style="margin-top:12px" type="submit">Send</button>
         <p id="form-status" class="hide" role="status" aria-live="polite" style="margin-top:10px"></p>
       </form>
     </div>
   </section>
 
-  <!-- ======= FOOTER ======= -->
-  <footer>
-    © <span id="year"></span> Biraj Thapa · Built with ♥ by ARIS
-  </footer>
+  <footer>© <span id="year"></span> Biraj Thapa · Built with ♥ by ARIS</footer>
 
-  <!-- ======= LIGHTBOX & DATA / SCRIPTS ======= -->
-  <dialog id="lightbox" style="border:none;border-radius:16px;max-width:min(980px, 96vw);width:96vw;background:var(--card);color:var(--text);box-shadow:var(--shadow)">
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.12)">
+  <dialog id="lightbox" aria-labelledby="lb-title">
+    <div class="dialog-head">
       <strong id="lb-title"></strong>
-      <button class="btn btn-ghost" onclick="closeLightbox()">Close</button>
+      <button class="btn btn-ghost" type="button" onclick="closeLightbox()">Close</button>
     </div>
-    <div id="lb-body" style="padding:12px 12px 18px"></div>
+    <div id="lb-body"></div>
   </dialog>
 
   <script>
-    // -------- PROJECT DATA: customize these cards for your work --------
+    const NILGIRI_BASE = "assets/nilgiri";
+
     const PROJECTS = [
-     {
-  title: "Nilgiri Khola Hydropower – Switchyard / Powerhouse / BBS",
-  year: "2022/23",
-  tags: ["cad", "structural", "report"],
-  cover: "assets/nilgiri-cover.jpg", 
-  summary: "Hydropower internship work: switchyard drawings & site checks, powerhouse generator casing detailing, and BBS preparation (selected samples).",
-  detailsHTML: `
-    <p><strong>Project:</strong> Nilgiri Khola Hydropower Project (110 MW)</p>
-    <p><strong>My contributions:</strong> site supervision support, reinforcement checks, AutoCAD field modifications, and BBS preparation for switchyard components.</p>
-
-    <details class="lb-section" open>
-      <summary>Switchyard → Drawings & Site Pictures</summary>
-      <p style="color:var(--muted);margin:8px 0 0">
-        Selected sample visuals (low-detail). Replace the placeholders below with your real files in <code>assets/</code>.
-      </p>
-
-      <div class="lb-gallery">
-        <a href="assets/nilgiri-switchyard-dwg-1.jpg" target="_blank" rel="noopener">
-          <img src="assets/nilgiri-switchyard-dwg-1.jpg" alt="Switchyard drawing sample 1"/>
-        </a>
-        <a href="assets/nilgiri-switchyard-site-1.jpg" target="_blank" rel="noopener">
-          <img src="assets/nilgiri-switchyard-site-1.jpg" alt="Switchyard site photo sample 1"/>
-        </a>
-        <a href="assets/nilgiri-switchyard-site-2.jpg" target="_blank" rel="noopener">
-          <img src="assets/nilgiri-switchyard-site-2.jpg" alt="Switchyard site photo sample 2"/>
-        </a>
-      </div>
-
-      <p style="margin-top:10px">
-        <a class="btn btn-ghost" href="assets/nilgiri-switchyard-sample.pdf" target="_blank" rel="noopener">
-          Open Switchyard Sample PDF
-        </a>
-      </p>
-    </details>
-
-    <details class="lb-section">
-      <summary>Powerhouse → Generator Casing Drawings & Pictures</summary>
-      <p style="color:var(--muted);margin:8px 0 0">
-        Add your generator casing drawing screenshots / photos here.
-      </p>
-
-      <div class="lb-gallery">
-        <a href="assets/nilgiri-generator-casing-dwg-1.jpg" target="_blank" rel="noopener">
-          <img src="assets/nilgiri-generator-casing-dwg-1.jpg" alt="Generator casing drawing sample 1"/>
-        </a>
-        <a href="assets/nilgiri-generator-casing-site-1.jpg" target="_blank" rel="noopener">
-          <img src="assets/nilgiri-generator-casing-site-1.jpg" alt="Generator casing site photo sample 1"/>
-        </a>
-      </div>
-
-      <p style="margin-top:10px">
-        <a class="btn btn-ghost" href="assets/nilgiri-generator-casing-sample.pdf" target="_blank" rel="noopener">
-          Open Generator Casing Sample PDF
-        </a>
-      </p>
-    </details>
-
-    <details class="lb-section">
-      <summary>BBS of Switchyard</summary>
-      <p style="color:var(--muted);margin:8px 0 0">
-        Add a redacted sample of your Bar Bending Schedule (BBS). PDF works best.
-      </p>
-
-      <p style="margin-top:10px">
-        <a class="btn btn-primary" href="assets/nilgiri-bbs-switchyard-sample.pdf" target="_blank" rel="noopener">
-          View BBS Sample (PDF)
-        </a>
-      </p>
-    </details>
-
-    <div class="lb-note">
-      <strong>PS:</strong> Complete site photos and detailed drawings are not uploaded in full, as they may be subject to confidentiality and copyright restrictions related to Nilgiri Hydropower and its project documentation. Only selected, low-detail samples are shown here for portfolio purposes.
-    </div>
-  `
-},
-,
       {
-        title: "Nawadurga – Site Supervision & CAD",
+        title: "Nilgiri Khola Hydropower - Civil Engineering Internship",
+        year: "2022/23",
+        tags: ["cad", "civil3d", "structural", "field", "report"],
+        cover: `${NILGIRI_BASE}/cover.jpg`,
+        summary: "Flagship case study covering N2 powerhouse generator casing, switchyard footings and BBS, field surveying, QA/QC, and office engineering exposure.",
+        detailsHTML: `
+          <div class="project-intro">
+            <p class="project-lead">A five-week academic internship on the Nilgiri Khola I and II run-of-river hydropower developments in Myagdi, Nepal. My assigned base was Malarani Camp, covering the inclined pressure shaft to the N2 powerhouse, tailrace and switchyard. The experience connected structural drawings and reinforcement details with real construction sequencing, surveying, quality control and multidisciplinary site coordination.</p>
+            <div class="project-meta">
+              <div class="meta-card"><span class="meta-label">Role</span><span class="meta-value">Civil Engineering Intern</span></div>
+              <div class="meta-card"><span class="meta-label">Duration</span><span class="meta-value">5 weeks</span></div>
+              <div class="meta-card"><span class="meta-label">Projects</span><span class="meta-value">N1: 40.7 MW · N2: 71 MW</span></div>
+              <div class="meta-card"><span class="meta-label">Location</span><span class="meta-value">Myagdi, Nepal</span></div>
+            </div>
+          </div>
+
+          <section class="project-section">
+            <div class="section-kicker">Site Assignment</div>
+            <h3>Responsibilities and engineering exposure</h3>
+            <div class="project-columns">
+              <ul>
+                <li>Observed and supported reinforcement and concreting inspections at the generator casing, transformer station, tailrace culvert and switchyard.</li>
+                <li>Interpreted plans, sections, bar marks and reinforcement layouts to connect drawings with field installation.</li>
+                <li>Supported switchyard footing layout work, coordinate extraction and site-point marking using a total station.</li>
+              </ul>
+              <ul>
+                <li>Prepared or studied Bar Bending Schedules for reinforced concrete footing components.</li>
+                <li>Observed concrete and shotcrete quality-control procedures, including slump and compressive-strength testing.</li>
+                <li>Gained exposure to AutoCAD, Civil 3D, QGIS, construction documentation and multidisciplinary coordination.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Powerhouse</div>
+            <h3>N2 generator casing - reinforcement and construction sequence</h3>
+            <p>The N2 generator casing was designed to transfer loads from the generator stator. The observed casing had a diameter of approximately 7.6 m, an inner cut-out diameter of 2.8 m and a 0.5 m shear-wall section. Reinforcement included 25 mm vertical bars and 20 mm distribution bars. Concreting was completed in five stages, requiring careful sequencing around embedded items and cut-outs.</p>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="${NILGIRI_BASE}/powerhouse/generator-casing-01.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/powerhouse/generator-casing-01.jpg" alt="Generator casing reinforcement cage"><div class="gallery-caption">Initial generator-casing reinforcement cage</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/powerhouse/generator-casing-02.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/powerhouse/generator-casing-02.jpg" alt="Generator casing reinforcement inspection"><div class="gallery-caption">Reinforcement installation and inspection access</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/powerhouse/generator-casing-03.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/powerhouse/generator-casing-03.jpg" alt="Generator casing embedded pipes"><div class="gallery-caption">Dense reinforcement around embedded cooling pipes</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/powerhouse/generator-casing-04.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/powerhouse/generator-casing-04.jpg" alt="Generator casing construction stage"><div class="gallery-caption">Construction progress within the circular casing</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/powerhouse/generator-casing-05.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/powerhouse/generator-casing-05.jpg" alt="Generator casing upper reinforcement"><div class="gallery-caption">Upper reinforcement and staged construction</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/powerhouse/generator-casing-06.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/powerhouse/generator-casing-06.jpg" alt="Generator casing construction progress"><div class="gallery-caption">Rebar congestion and construction coordination</div></a>
+            </div>
+            <p><strong>Engineering learning:</strong> I learned to identify bars through plan and section drawings, understand separate top and bottom reinforcement layouts, interpret bar marks, and recognize the importance of lap length and development length. Detailed generator-casing design drawings are intentionally not published.</p>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Switchyard</div>
+            <h3>Bay 1 footing layout, reinforcement and BBS</h3>
+            <p>The N2 switchyard included five bays. Internship activities included the construction of Bay 1, where 19 towers of six footing types were involved. Exposure included AutoCAD footing layout, coordinate extraction, total-station setting-out, stone soiling, reinforcement placement and raft concreting.</p>
+            <div class="gallery-grid two">
+              <a class="gallery-item drawing-item" href="${NILGIRI_BASE}/switchyard/footing-drawing.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/footing-drawing.jpg" alt="Switchyard reinforced concrete footing drawing"><div class="gallery-caption">Selected footing reinforcement drawing - plans and sections</div></a>
+              <a class="gallery-item drawing-item" href="${NILGIRI_BASE}/switchyard/footing-bbs.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/footing-bbs.jpg" alt="Switchyard footing bar bending schedule"><div class="gallery-caption">Selected footing Bar Bending Schedule sample</div></a>
+            </div>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="${NILGIRI_BASE}/switchyard/site-01.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/site-01.jpg" alt="Switchyard setting out"><div class="gallery-caption">Footing locations and preliminary setting-out</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/switchyard/site-02.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/site-02.jpg" alt="Switchyard rebar construction"><div class="gallery-caption">Reinforcement and formwork progress</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/switchyard/site-03.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/site-03.jpg" alt="Switchyard bay construction"><div class="gallery-caption">Bay-wide footing construction activities</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/switchyard/site-04.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/site-04.jpg" alt="Switchyard reinforcement cage"><div class="gallery-caption">Pedestal reinforcement cage assembly</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/switchyard/site-05.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/switchyard/site-05.jpg" alt="Completed switchyard footings"><div class="gallery-caption">Completed footing bases within Bay 1</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Surveying</div>
+            <h3>Construction layout and level control</h3>
+            <p>Surveying exposure included using a total station to mark switchyard points and an auto level to verify elevations for concreting and ground preparation.</p>
+            <div class="gallery-grid two">
+              <a class="gallery-item" href="${NILGIRI_BASE}/survey/total-station.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/survey/total-station.jpg" alt="Total station at switchyard"><div class="gallery-caption">Total station used for Bay 1 point marking</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/survey/auto-level.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/survey/auto-level.jpg" alt="Auto level during concreting"><div class="gallery-caption">Auto-level check for construction elevation control</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Office Engineering</div>
+            <h3>QGIS and Civil 3D technical work</h3>
+            <p>Office-based learning included preparing a catchment map in QGIS and using Civil 3D to define a construction area, review contours, create a grading model and examine an alignment profile.</p>
+            <div class="gallery-grid two">
+              <a class="gallery-item drawing-item" href="${NILGIRI_BASE}/office/qgis-catchment.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/office/qgis-catchment.jpg" alt="QGIS catchment map"><div class="gallery-caption">Nilgiri Khola watershed delineation in QGIS</div></a>
+              <a class="gallery-item drawing-item" href="${NILGIRI_BASE}/office/civil3d-contour.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/office/civil3d-contour.jpg" alt="Civil 3D contour model"><div class="gallery-caption">Construction area defined using contour information</div></a>
+              <a class="gallery-item drawing-item" href="${NILGIRI_BASE}/office/civil3d-model.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/office/civil3d-model.jpg" alt="Civil 3D object viewer model"><div class="gallery-caption">Isometric grading model in Civil 3D Object Viewer</div></a>
+              <a class="gallery-item drawing-item" href="${NILGIRI_BASE}/office/civil3d-alignment.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/office/civil3d-alignment.jpg" alt="Civil 3D alignment profile"><div class="gallery-caption">Plan alignment and profile review</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Quality Control</div>
+            <h3>Concrete testing and documentation</h3>
+            <p>Quality-control exposure included cube casting and curing, compressive-strength testing, slump testing, shotcrete core testing and review of field test sheets. These activities reinforced the link between specifications, testing frequency, recorded results and acceptance decisions.</p>
+            <div class="gallery-grid two">
+              <a class="gallery-item" href="${NILGIRI_BASE}/quality/slump-test.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/quality/slump-test.jpg" alt="Concrete slump test"><div class="gallery-caption">Concrete workability check using a slump test</div></a>
+              <a class="gallery-item" href="${NILGIRI_BASE}/quality/compressive-test.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NILGIRI_BASE}/quality/compressive-test.jpg" alt="Concrete compressive strength testing machine"><div class="gallery-caption">Compressive-strength testing of concrete cubes</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Skills Demonstrated</div>
+            <h3>Technical and professional development</h3>
+            <div class="skill-cloud">
+              <span class="skill-pill">Reinforcement Inspection</span><span class="skill-pill">BBS Preparation</span><span class="skill-pill">Drawing Interpretation</span><span class="skill-pill">AutoCAD</span><span class="skill-pill">Civil 3D</span><span class="skill-pill">QGIS</span><span class="skill-pill">Construction Surveying</span><span class="skill-pill">Concrete QA/QC</span><span class="skill-pill">Hydropower Construction</span><span class="skill-pill">Site Documentation</span><span class="skill-pill">Multidisciplinary Coordination</span><span class="skill-pill">Safety Awareness</span>
+            </div>
+          </section>
+
+          <div class="confidentiality"><strong>Portfolio note:</strong> Complete site photographs, construction drawings and detailed engineering documents are not published because they may be subject to the copyright, confidentiality and project-documentation requirements of Nilgiri Khola Hydropower Company Limited and associated project parties. Only selected, reduced-resolution academic samples are presented to demonstrate learning and experience.</div>
+        `
+      },
+      {
+        title: "Nawadurga - Site Supervision & CAD",
         year: "2023",
-        tags: ["cad", "civil3d"],
+        tags: ["cad", "civil3d", "field"],
         cover: "https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=1600&auto=format&fit=crop",
-        summary: "Supervised on-site activities; produced technical drawings, cost estimates and take-offs using AutoCAD / Civil 3D.",
-        detailsHTML: `
-          <p><strong>Scope:</strong> Residential & infrastructure works</p>
-          <ul>
-            <li>Site supervision, schedule & quality tracking</li>
-            <li>AutoCAD drawings; Civil 3D model communication</li>
-            <li>Quantity take-offs and cost estimates</li>
-          </ul>
-        `
+        summary: "Supervised site activities and prepared technical drawings, cost estimates and quantity take-offs using AutoCAD and Civil 3D.",
+        detailsHTML: `<section class="project-section"><h3>Residential and infrastructure work</h3><ul><li>Site supervision, schedule and quality tracking</li><li>AutoCAD drawings and Civil 3D support</li><li>Quantity take-offs and cost estimates</li><li>Coordination with contractors, architects and clients</li></ul></section>`
       },
       {
-        title: "Bridge Modelling Study (ETABS/Civil 3D)",
-        year: "2024/25",
-        tags: ["structural"],
+        title: "Structural Modelling Study",
+        year: "2023",
+        tags: ["structural", "report"],
         cover: "https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1600&auto=format&fit=crop",
-        summary: "Exploratory modelling of a cable-stayed concept; load paths, deck stiffness and pylon proportioning insights.",
-        detailsHTML: `
-          <p>Concept design and analysis of a cable-stayed bridge, including deck behavior and pylon proportioning. Screenshots from ETABS and section sketches can go here.</p>
-        `
-      },
+        summary: "Academic structural analysis and design work focused on load paths, member behaviour and reinforced-concrete design concepts.",
+        detailsHTML: `<section class="project-section"><h3>Structural analysis experience</h3><p>Academic modelling and design work using ETABS, supported by structural drawings, calculations and design interpretation. Project screenshots and report extracts will be added in the next portfolio update.</p></section>`
+      }
     ];
 
-    // -------- RENDERING LOGIC --------
-    const grid = document.getElementById('project-grid');
-    const lightbox = document.getElementById('lightbox');
-    const lbTitle = document.getElementById('lb-title');
-    const lbBody = document.getElementById('lb-body');
+    const grid = document.getElementById("project-grid");
+    const lightbox = document.getElementById("lightbox");
+    const lbTitle = document.getElementById("lb-title");
+    const lbBody = document.getElementById("lb-body");
 
-    function render(list){
-      grid.innerHTML = list.map(card).join('');
+    function render(list){grid.innerHTML=list.map(card).join("")}
+
+    function escapeAttribute(value){
+      return String(value).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
     }
 
-    function card(p){
-      // We have to escape quotes for onclick, so we build a safe dataset form instead
-      const dataAttr = encodeURIComponent(JSON.stringify(p));
-      return `
-        <article class="project" tabindex="0"
-          role="button"
-          aria-label="${p.title}"
-          data-payload="${dataAttr}">
-          <img class="project-img" src="${p.cover}" alt="${p.title}"/>
-          <div class="project-body">
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-              <h3 style="margin:0;font-size:18px">${p.title}</h3>
-              <span style="color:var(--muted);font-size:12px">${p.year}</span>
-            </div>
-            <p style="margin:8px 0 10px;color:var(--muted)">${p.summary}</p>
-            ${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}
+    function card(project){
+      const payload=encodeURIComponent(JSON.stringify(project));
+      return `<article class="project" tabindex="0" role="button" aria-label="Open ${escapeAttribute(project.title)} case study" data-payload="${payload}">
+        <img class="project-img" loading="lazy" src="${project.cover}" alt="${escapeAttribute(project.title)}" />
+        <div class="project-body">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+            <h3 style="margin:0;font-size:18px;line-height:1.35">${project.title}</h3>
+            <span style="color:var(--muted);font-size:12px;white-space:nowrap">${project.year}</span>
           </div>
-        </article>
-      `;
+          <p style="margin:8px 0 10px;color:var(--muted);line-height:1.5">${project.summary}</p>
+          ${project.tags.map(tag=>`<span class="tag">${tag}</span>`).join("")}
+        </div>
+      </article>`;
     }
 
-    function openLightbox(p){
-      lbTitle.textContent = p.title;
-      lbBody.innerHTML = `
-        <img src="${p.cover}" alt="${p.title}" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,.12);margin-bottom:10px"/>
-        ${p.detailsHTML}
-      `;
-      if(typeof lightbox.showModal === 'function') lightbox.showModal();
+    function openLightbox(project){
+      lbTitle.textContent=project.title;
+      lbBody.innerHTML=`<img class="project-cover-large" src="${project.cover}" alt="${escapeAttribute(project.title)}" />${project.detailsHTML}`;
+      if(typeof lightbox.showModal==="function") lightbox.showModal();
+      document.body.style.overflow="hidden";
+      lbBody.scrollTop=0;
     }
+
     function closeLightbox(){
-      lightbox.close();
+      if(lightbox.open) lightbox.close();
+      document.body.style.overflow="";
     }
 
-    // click handler for project cards
-    grid.addEventListener('click', e => {
-      const cardEl = e.target.closest('.project');
-      if(!cardEl) return;
-      const payload = cardEl.getAttribute('data-payload');
-      if(!payload) return;
-      const data = JSON.parse(decodeURIComponent(payload));
-      openLightbox(data);
-    });
-    grid.addEventListener('keypress', e => {
-      if(e.key !== 'Enter') return;
-      const cardEl = e.target.closest('.project');
-      if(!cardEl) return;
-      const payload = cardEl.getAttribute('data-payload');
-      if(!payload) return;
-      const data = JSON.parse(decodeURIComponent(payload));
-      openLightbox(data);
+    grid.addEventListener("click",event=>{
+      const el=event.target.closest(".project");
+      if(!el)return;
+      openLightbox(JSON.parse(decodeURIComponent(el.dataset.payload)));
     });
 
-    // FILTER BUTTONS
-    document.querySelectorAll('[data-filter]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const k = btn.dataset.filter;
-        if(k==='all') return render(PROJECTS);
-        render(PROJECTS.filter(p=>p.tags.includes(k)));
-      })
-    })
+    grid.addEventListener("keydown",event=>{
+      if(event.key!=="Enter"&&event.key!==" ")return;
+      event.preventDefault();
+      const el=event.target.closest(".project");
+      if(!el)return;
+      openLightbox(JSON.parse(decodeURIComponent(el.dataset.payload)));
+    });
 
-    // CONTACT FORM HANDLER
-    function sendForm(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      const body = encodeURIComponent(`Hi Biraj,\n\n${msg}\n\n— ${name} (${email})`);
-      window.location.href = `mailto:thapa.biraj25@gmail.com?subject=Portfolio%20Inquiry&body=${body}`;
-      const s = document.getElementById('form-status');
-      s.textContent = 'Opening your email app…';
-      s.classList.remove('hide');
+    lightbox.addEventListener("click",event=>{
+      const rect=lightbox.getBoundingClientRect();
+      const inside=event.clientX>=rect.left&&event.clientX<=rect.right&&event.clientY>=rect.top&&event.clientY<=rect.bottom;
+      if(!inside)closeLightbox();
+    });
+    lightbox.addEventListener("close",()=>{document.body.style.overflow=""});
+
+    document.querySelectorAll("[data-filter]").forEach(button=>{
+      button.addEventListener("click",()=>{
+        const filter=button.dataset.filter;
+        render(filter==="all"?PROJECTS:PROJECTS.filter(project=>project.tags.includes(filter)));
+      });
+    });
+
+    function sendForm(event){
+      event.preventDefault();
+      const name=document.getElementById("name").value.trim();
+      const email=document.getElementById("email").value.trim();
+      const message=document.getElementById("message").value.trim();
+      const body=encodeURIComponent(`Hi Biraj,\n\n${message}\n\n- ${name} (${email})`);
+      window.location.href=`mailto:thapa.biraj25@gmail.com?subject=Portfolio%20Inquiry&body=${body}`;
+      const status=document.getElementById("form-status");
+      status.textContent="Opening your email app…";
+      status.classList.remove("hide");
     }
 
-    // FOOTER YEAR
-    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleMenu(button){
+      const menu=document.getElementById("mobileMenu");
+      const open=menu.style.display==="flex";
+      menu.style.display=open?"none":"flex";
+      button.setAttribute("aria-expanded",String(!open));
+    }
 
-    // INITIAL RENDER
+    function closeMenu(){
+      const menu=document.getElementById("mobileMenu");
+      const button=document.querySelector(".nav-toggle");
+      menu.style.display="none";
+      button?.setAttribute("aria-expanded","false");
+    }
+
+    document.addEventListener("click",event=>{
+      const menu=document.getElementById("mobileMenu");
+      if(!event.target.closest("nav")&&menu.style.display==="flex")closeMenu();
+    });
+
+    document.getElementById("year").textContent=new Date().getFullYear();
     render(PROJECTS);
-
-    function toggleMenu() {
-  const menu = document.getElementById('mobileMenu');
-  const isOpen = menu.style.display === 'flex';
-  menu.style.display = isOpen ? 'none' : 'flex';
-}
-
   </script>
 </body>
 </html>
-
-
-
-
-
-
-

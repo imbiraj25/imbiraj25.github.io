@@ -1,0 +1,15 @@
+BIRAJ THAPA PORTFOLIO - NILGIRI CASE STUDY UPDATE
+
+1. Keep your existing assets/favicon.png and assets/resume.pdf files in the repository.
+2. Upload/replace index.html at the repository root.
+3. Upload the included assets/nilgiri folder and preserve all subfolder names.
+4. Commit the changes.
+5. Wait 1-2 minutes, then hard-refresh https://imbiraj25.github.io.
+
+The Nilgiri project card opens a full case-study modal with:
+- N2 generator casing construction
+- Switchyard footing drawing, BBS and site photographs
+- Surveying work
+- QGIS and Civil 3D work
+- Concrete quality-control exposure
+- Skills and confidentiality notice
