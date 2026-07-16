@@ -1,15 +1,13 @@
-BIRAJ THAPA PORTFOLIO - NILGIRI CASE STUDY UPDATE
+BIRAJ THAPA PORTFOLIO - NILGIRI + CHANDRAGIRI UPDATE
 
-1. Keep your existing assets/favicon.png and assets/resume.pdf files in the repository.
-2. Upload/replace index.html at the repository root.
-3. Upload the included assets/nilgiri folder and preserve all subfolder names.
-4. Commit the changes.
-5. Wait 1-2 minutes, then hard-refresh https://imbiraj25.github.io.
+1. Open the repository: imbiraj25/imbiraj25.github.io
+2. Choose Add file > Upload files.
+3. Upload the index.html file and the complete assets folder from this package.
+4. Allow GitHub to replace files with matching names.
+5. Do NOT delete your existing assets/resume.pdf or assets/favicon.png.
+6. Commit the changes to main, then wait 1-3 minutes and refresh imbiraj25.github.io.
 
-The Nilgiri project card opens a full case-study modal with:
-- N2 generator casing construction
-- Switchyard footing drawing, BBS and site photographs
-- Surveying work
-- QGIS and Civil 3D work
-- Concrete quality-control exposure
-- Skills and confidentiality notice
+The new project card is titled:
+Chandragiri Hills Adventure Infrastructure - Drawing & Consultation Support
+
+It contains selected reduced-resolution drawing previews only. Original attribution is retained, and the page clearly describes Biraj's collaborative support role rather than claiming sole design authorship.
