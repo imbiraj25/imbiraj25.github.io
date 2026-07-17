@@ -1,13 +1,31 @@
-BIRAJ THAPA PORTFOLIO - NILGIRI + CHANDRAGIRI UPDATE
+BIRAJ THAPA PORTFOLIO - FINAL UPDATE
 
-1. Open the repository: imbiraj25/imbiraj25.github.io
-2. Choose Add file > Upload files.
-3. Upload the index.html file and the complete assets folder from this package.
-4. Allow GitHub to replace files with matching names.
-5. Do NOT delete your existing assets/resume.pdf or assets/favicon.png.
-6. Commit the changes to main, then wait 1-3 minutes and refresh imbiraj25.github.io.
+This package contains the updated index.html and all new project assets.
 
-The new project card is titled:
-Chandragiri Hills Adventure Infrastructure - Drawing & Consultation Support
+WHAT CHANGED
+- Added the Namlan Hydropower powerhouse structural-analysis case study.
+- Added ETABS model, load-combination, analysis-result and RC-detailing extracts.
+- Added a locally stored engineering hero image and Namlan project cover.
+- Reduced the Projects section to four focused case studies:
+  1. Namlan Hydropower - Powerhouse Structural Analysis
+  2. Nilgiri Khola Hydropower Internship
+  3. Chandragiri Hills Adventure Infrastructure
+  4. Sunakothi Kitchen Interior
+- Removed the generic Nawadurga stock-photo card and the old structural placeholder.
+- Simplified the project filters.
 
-It contains selected reduced-resolution drawing previews only. Original attribution is retained, and the page clearly describes Biraj's collaborative support role rather than claiming sole design authorship.
+HOW TO PUBLISH ON GITHUB
+1. Extract this ZIP.
+2. Open your imbiraj25.github.io repository.
+3. Upload and replace index.html.
+4. Upload the assets folder, including:
+   - assets/namlan/
+   - assets/portfolio-hero.jpg
+5. Commit the changes.
+
+KEEP YOUR EXISTING FILES
+This package intentionally does not replace:
+- assets/resume.pdf
+- assets/favicon.png
+
+Make sure those two existing files remain in the repository.
