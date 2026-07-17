@@ -132,6 +132,10 @@
     .project-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .skill-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
     .skill-pill{padding:7px 10px;border-radius:999px;border:1px solid rgba(96,165,250,.25);background:rgba(96,165,250,.07);font-size:12px;font-weight:700;color:#cfe5ff}
+    .software-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+    .software-card{padding:14px;border:1px solid rgba(148,163,184,.16);border-radius:12px;background:rgba(255,255,255,.02)}
+    .software-card strong{display:block;margin-bottom:5px;font-size:14px}
+    .software-card span{display:block;color:var(--muted);font-size:12px;line-height:1.45}
     .confidentiality{margin-top:16px;padding:14px 16px;border-left:4px solid var(--brand-2);background:rgba(34,211,238,.07);border-radius:12px;color:var(--muted);font-size:13px;line-height:1.55}
     .confidentiality strong{color:var(--text)}
 
@@ -170,6 +174,7 @@
       .drawing-item{grid-column:1/-1}
       .drawing-item img{height:auto}
       .project-columns{grid-template-columns:1fr}
+      .software-grid{grid-template-columns:1fr 1fr}
     }
 
     @media (max-width:420px){
@@ -212,7 +217,7 @@
     <div class="hero-card" role="region" aria-label="Introduction">
       <span class="kicker">Civil Engineer · Project Coordinator · Structural Enthusiast</span>
       <h1 id="home-title" class="title">Designing infrastructure that is safe, efficient, and future-ready.</h1>
-      <p class="subtitle">I’m Biraj Thapa, a Civil Engineer based in Canada with experience in construction supervision, quantity take-offs, and CAD modelling. Post-graduate certificate in Engineering Business & Safety Management (Confederation College, 2025). Aspiring Structural Engineer working toward P.Eng. licensure.</p>
+      <p class="subtitle">I’m Biraj Thapa, a Civil Engineer based in Canada with experience across hydropower construction, structural analysis, CAD drafting, quantity take-offs and project coordination. Post-graduate certificate in Engineering Business & Safety Management (Confederation College, 2025). Working toward a structural engineering career and P.Eng. licensure.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#projects">View Projects</a>
         <a class="btn btn-ghost" href="assets/resume.pdf" download>Download Resume</a>
@@ -220,7 +225,7 @@
       </div>
     </div>
     <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=1400&auto=format&fit=crop" alt="Civil engineering bridge structure" />
+      <img src="assets/portfolio-hero.jpg" alt="Hydropower structure with technical blueprint overlay" />
     </div>
   </main>
 
@@ -285,19 +290,16 @@
   <section id="projects" class="container">
     <div class="section-head">
       <h2 class="section-title">Projects & Drawings</h2>
-      <p class="section-desc">Selected work · click a card for the full case study</p>
+      <p class="section-desc">Four focused case studies · click a card for details</p>
     </div>
     <div class="card" style="margin-bottom:16px">
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:14px;line-height:1.3">
         <strong>Filters:</strong>
         <button class="btn btn-ghost" type="button" data-filter="all">All</button>
-        <button class="btn btn-ghost" type="button" data-filter="cad">CAD</button>
-        <button class="btn btn-ghost" type="button" data-filter="civil3d">Civil 3D</button>
         <button class="btn btn-ghost" type="button" data-filter="structural">Structural</button>
+        <button class="btn btn-ghost" type="button" data-filter="cad">CAD</button>
         <button class="btn btn-ghost" type="button" data-filter="field">Field</button>
         <button class="btn btn-ghost" type="button" data-filter="interior">Interior</button>
-        <button class="btn btn-ghost" type="button" data-filter="adventure">Adventure Infrastructure</button>
-        <button class="btn btn-ghost" type="button" data-filter="report">Reports</button>
       </div>
     </div>
     <div id="project-grid" class="grid" aria-live="polite"></div>
@@ -358,8 +360,78 @@
     const NILGIRI_BASE = "assets/nilgiri";
     const CHANDRAGIRI_BASE = "assets/chandragiri";
     const KITCHEN_BASE = "assets/kitchen";
+    const NAMLAN_BASE = "assets/namlan";
 
     const PROJECTS = [
+      {
+        title: "Namlan Hydropower - Powerhouse Structural Analysis",
+        year: "2023",
+        tags: ["structural", "cad"],
+        cover: `${NAMLAN_BASE}/cover.jpg`,
+        summary: "Final-year academic project combining hydropower feasibility work with ETABS-based modelling, load analysis and reinforced-concrete detailing of the powerhouse machine hall.",
+        detailsHTML: `
+          <div class="project-intro">
+            <p class="project-lead">A Kathmandu University final-year group project studying the potential of the Namlan Khola Hydropower Project and carrying out structural analysis of its powerhouse. This portfolio view intentionally focuses on the engineering software workflow: translating the machine-hall layout into an ETABS model, defining material and load inputs, reviewing structural response and producing reinforced-concrete details.</p>
+            <div class="project-meta">
+              <div class="meta-card"><span class="meta-label">Project Type</span><span class="meta-value">Academic Group Project</span></div>
+              <div class="meta-card"><span class="meta-label">Structural Focus</span><span class="meta-value">Powerhouse Machine Hall</span></div>
+              <div class="meta-card"><span class="meta-label">Installed Capacity</span><span class="meta-value">135 MW</span></div>
+              <div class="meta-card"><span class="meta-label">Location</span><span class="meta-value">Mugu District, Nepal</span></div>
+            </div>
+          </div>
+
+          <section class="project-section">
+            <div class="section-kicker">Software Workflow</div>
+            <h3>From project data to structural design documentation</h3>
+            <div class="software-grid">
+              <div class="software-card"><strong>ETABS</strong><span>Machine-hall grid, 3D frame model, load patterns, mass source, load combinations and structural response review.</span></div>
+              <div class="software-card"><strong>AutoCAD</strong><span>Powerhouse layouts, framing coordination and reinforced-concrete detailing for beams, columns and slabs.</span></div>
+              <div class="software-card"><strong>Microsoft Excel</strong><span>Hydrology, energy, cost and financial calculations; tabulation, comparison and chart development.</span></div>
+              <div class="software-card"><strong>Google Earth / GIS</strong><span>Project-location study, watershed context and alignment visualization for the broader feasibility study.</span></div>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Model Development</div>
+            <h3>Powerhouse machine-hall framing in ETABS</h3>
+            <p>The structural model used the machine-hall plan as the grid basis. The presentation identifies M25 concrete, HYSD 500 reinforcement and IS 456:2000 for concrete design. The frame included crane beams, cross beams and columns supporting the machine-hall superstructure.</p>
+            <div class="gallery-grid two">
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/machine-hall-layout.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/machine-hall-layout.jpg" alt="Overall machine hall layout"><div class="gallery-caption">Overall machine-hall layout used to establish units, erection bay, facilities and column locations</div></a>
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/etabs-model.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/etabs-model.jpg" alt="Three-dimensional ETABS machine hall frame"><div class="gallery-caption">3D ETABS model of the machine-hall frame</div></a>
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/etabs-plan.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/etabs-plan.jpg" alt="ETABS plan view and model inputs"><div class="gallery-caption">ETABS plan view with material and design-code inputs</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Loading & Analysis</div>
+            <h3>Crane, gravity and seismic actions</h3>
+            <p>The analysis considered dead and live loads, EOT crane vertical load, transverse crane surge, longitudinal tractive force and seismic actions. Load combinations were developed from the Powerhouse Design Guideline 2018, with seismic design reference to IS 1893:2016.</p>
+            <div class="gallery-grid two">
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/load-combinations.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/load-combinations.jpg" alt="ETABS mass source and load combinations"><div class="gallery-caption">Mass-source assumptions and ETABS load combinations</div></a>
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/analysis-results.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/analysis-results.jpg" alt="ETABS bending moment and axial force results"><div class="gallery-caption">Review of crane-beam bending moment and column axial-force response</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Design Output</div>
+            <h3>Reinforced-concrete member detailing</h3>
+            <p>The reported trial member sizes were 750 × 750 mm for crane beams, 300 × 450 mm for cross beams and 750 × 750 mm for columns. The design workflow continued from ETABS force extraction to reinforcement checks and typical details for major structural components.</p>
+            <div class="gallery-grid">
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/crane-beam-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/crane-beam-detail.jpg" alt="Crane beam reinforcement detailing"><div class="gallery-caption">Typical crane-beam cross-section and longitudinal reinforcement detail</div></a>
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/column-detail.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/column-detail.jpg" alt="Column reinforcement detailing"><div class="gallery-caption">Typical column longitudinal and transverse reinforcement detail</div></a>
+              <a class="gallery-item drawing-item" href="${NAMLAN_BASE}/control-bay-slab.jpg" target="_blank" rel="noopener"><img loading="lazy" src="${NAMLAN_BASE}/control-bay-slab.jpg" alt="Control bay slab reinforcement sections"><div class="gallery-caption">Control-bay slab reinforcement along short and long spans</div></a>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <div class="section-kicker">Capabilities Demonstrated</div>
+            <h3>Structural-analysis and technical-communication skills</h3>
+            <div class="skill-cloud"><span class="skill-pill">ETABS Modelling</span><span class="skill-pill">Load Definition</span><span class="skill-pill">Load Combinations</span><span class="skill-pill">EOT Crane Loads</span><span class="skill-pill">Seismic Loading</span><span class="skill-pill">RC Member Design</span><span class="skill-pill">Reinforcement Detailing</span><span class="skill-pill">AutoCAD</span><span class="skill-pill">Excel Calculations</span><span class="skill-pill">Technical Presentation</span></div>
+          </section>
+
+          <div class="confidentiality"><strong>Academic attribution:</strong> This was a six-member Kathmandu University final-year group project completed under faculty supervision. The portfolio highlights the structural-analysis workflow and the technical areas in which I participated; it does not claim sole authorship of the full feasibility study or presentation.</div>
+        `
+      },
       {
         title: "Nilgiri Khola Hydropower - Civil Engineering Internship",
         year: "2022/23",
@@ -638,22 +710,6 @@
           <div class="confidentiality"><strong>Design attribution:</strong> The design-reference images were supplied by the client's interior design consultant and are shown only as reduced-resolution comparison material. They are not presented as my original design work. My portfolio contribution relates to site execution support, coordination and documentation of the completed installation.</div>
         `
       },
-      {
-        title: "Nawadurga - Site Supervision & CAD",
-        year: "2023",
-        tags: ["cad", "civil3d", "field"],
-        cover: "https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=1600&auto=format&fit=crop",
-        summary: "Supervised site activities and prepared technical drawings, cost estimates and quantity take-offs using AutoCAD and Civil 3D.",
-        detailsHTML: `<section class="project-section"><h3>Residential and infrastructure work</h3><ul><li>Site supervision, schedule and quality tracking</li><li>AutoCAD drawings and Civil 3D support</li><li>Quantity take-offs and cost estimates</li><li>Coordination with contractors, architects and clients</li></ul></section>`
-      },
-      {
-        title: "Structural Modelling Study",
-        year: "2023",
-        tags: ["structural", "report"],
-        cover: "https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1600&auto=format&fit=crop",
-        summary: "Academic structural analysis and design work focused on load paths, member behaviour and reinforced-concrete design concepts.",
-        detailsHTML: `<section class="project-section"><h3>Structural analysis experience</h3><p>Academic modelling and design work using ETABS, supported by structural drawings, calculations and design interpretation. Project screenshots and report extracts will be added in the next portfolio update.</p></section>`
-      }
     ];
 
     const grid = document.getElementById("project-grid");
