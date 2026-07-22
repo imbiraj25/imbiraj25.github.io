@@ -1,31 +1,26 @@
-BIRAJ THAPA PORTFOLIO - FINAL UPDATE
+BIRAJ THAPA PORTFOLIO - PEO TITLE COMPLIANCE UPDATE
 
-This package contains the updated index.html and all new project assets.
+This package contains the corrected portfolio site, all project assets, and an updated resume PDF.
 
 WHAT CHANGED
-- Added the Namlan Hydropower powerhouse structural-analysis case study.
-- Added ETABS model, load-combination, analysis-result and RC-detailing extracts.
-- Added a locally stored engineering hero image and Namlan project cover.
-- Reduced the Projects section to four focused case studies:
+- Replaced self-identification as "Civil Engineer" with "Civil Engineering Graduate."
+- Updated the browser title, metadata, navigation identity, hero section, profile and career-direction text.
+- Rephrased licensure language to make it clear that professional licensure is a future goal.
+- Reworded the Nawadurga role as "Site Coordination & Civil Engineering Support."
+- Added a corrected assets/resume.pdf that avoids using restricted engineering titles as Biraj's current designation.
+- Preserved the four focused case studies:
   1. Namlan Hydropower - Powerhouse Structural Analysis
   2. Nilgiri Khola Hydropower Internship
   3. Chandragiri Hills Adventure Infrastructure
   4. Sunakothi Kitchen Interior
-- Removed the generic Nawadurga stock-photo card and the old structural placeholder.
-- Simplified the project filters.
 
 HOW TO PUBLISH ON GITHUB
 1. Extract this ZIP.
-2. Open your imbiraj25.github.io repository.
+2. Open the imbiraj25.github.io repository.
 3. Upload and replace index.html.
-4. Upload the assets folder, including:
-   - assets/namlan/
-   - assets/portfolio-hero.jpg
-5. Commit the changes.
+4. Upload and replace the complete assets folder, including assets/resume.pdf.
+5. Keep the existing assets/favicon.png if GitHub does not automatically preserve it.
+6. Commit the changes.
 
-KEEP YOUR EXISTING FILES
-This package intentionally does not replace:
-- assets/resume.pdf
-- assets/favicon.png
-
-Make sure those two existing files remain in the repository.
+IMPORTANT
+The website now presents Biraj as a Civil Engineering Graduate and does not claim that he is licensed by Professional Engineers Ontario.
